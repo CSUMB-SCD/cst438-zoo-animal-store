@@ -1,0 +1,16 @@
+[
+    {
+        "name": "Elephant",
+        "price": 5.10,
+        "description": "This is an elephant",
+        "instock": 10,
+        "image": "elephant.jpg"
+    },
+    {
+        "name": "Giraffe",
+        "price": 5.10,
+        "description": "This is a giraffe",
+        "instock": 10,
+        "image": "elephant.jpg"
+    }
+]
