@@ -16,8 +16,8 @@ export class DetailsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.data.getItem(this.item$).subscribe(
-      data => this.item$ = data 
+    this.data.getItem().subscribe(
+      data => this.item$ = data[this.route.params["value"].id - 1]
     );
   }
 

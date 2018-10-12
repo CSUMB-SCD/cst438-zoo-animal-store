@@ -16,8 +16,8 @@ export class DataService {
     return this.http.get('../assets/items.json')
   }
 
-  getItem(itemName) {
-    return this.http.get('../assets/items.json'+itemName)
+  getItem() {
+    return this.http.get('../assets/items.json')
   }
 
 }

@@ -1,5 +1,6 @@
 [
     {
+        "id": 1,
         "name": "Elephant",
         "price": 5.10,
         "description": "This is an elephant",
@@ -7,6 +8,7 @@
         "image": "elephant.jpg"
     },
     {
+        "id": 2,
         "name": "Giraffe",
         "price": 5.10,
         "description": "This is a giraffe",
