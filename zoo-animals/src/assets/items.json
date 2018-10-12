@@ -1,16 +1,88 @@
 [
-    {
-        "name": "Elephant",
-        "price": 5.10,
-        "description": "This is an elephant",
-        "instock": 10,
-        "image": "elephant.jpg"
-    },
-    {
-        "name": "Giraffe",
-        "price": 5.10,
-        "description": "This is a giraffe",
-        "instock": 10,
-        "image": "elephant.jpg"
+  {
+   "name": "Elephant",
+   "price": 5.10,
+   "description": "This is an elephant",
+   "instock": 10,
+   "image": "elephant.jpg"
+  },
+  {
+    "name": "Giraffe",
+    "price": 5.10,
+    "description": "This is a giraffe",
+    "instock": 10,
+    "image": "elephant.jpg"
+  },
+
+  {
+    "name": "Lemur",
+   - "price": 9.80,
+    "description": "This is a Lemur",
+    "instock": 15,
+    "image": "lemur.jpg"
+  },
+
+  {
+    "name": "Lion",
+    "price": 6.10,
+    "description": "This is a Lion",
+    "instock": 10,
+    "image": "lion.jpg"
+  },
+
+  {
+    "name": "Hyena",
+    "price": 1.50,
+    "description": "This is a Hyena",
+    "instock": 100,
+    "image": "hyena.jpg"
+  },
+
+  {
+    "name": "Zebra",
+    "price": 6.90,
+    "description": "This is a Zebra",
+    "instock": 10,
+    "image": "zebra.jpg"
+  },
+
+  {
+    "name": "Lynx Cat",
+    "price": 20.10,
+    "description": "This is a Lynx Cat",
+    "instock": 10,
+    "image": "lynx.jpg"
+  },
+
+  {
+    "name": "Hippo",
+    "price": 5.10,
+    "description": "This is a Hippo",
+    "instock": 10,
+    "image": "hippo.jpg"
+  },
+
+  {
+    "name": "Honey Badger",
+    "price": 6.10,
+    "description": "This is a Honey Badger",
+    "instock": 10,
+    "image": "honeybadger.jpg"
+  },
+
+  {
+    "name": "Mongoose",
+    "price": 5.10,
+    "description": "This is a Mongoose",
+    "instock": 10,
+    "image": "mongoose.jpg"
+  },
+
+  {
+    "name": "Meerkat",
+    "price": 3.10,
+    "description": "This is a Meerkat",
+    "instock": 10,
+    "image": "meerkat.jpg"
     }
 ]
