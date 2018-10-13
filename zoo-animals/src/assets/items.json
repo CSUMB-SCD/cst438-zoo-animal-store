@@ -13,7 +13,7 @@
     "price": 5.10,
     "description": "This is a giraffe",
     "instock": 10,
-    "image": "elephant.jpg"
+    "image": "giraffe.jpg"
   },
   {
     "id": 3,
@@ -49,7 +49,7 @@
   },
   {
     "id": 7,
-    "name": "Lynx Cat",
+    "name": "Lynx",
     "price": 20.10,
     "description": "This is a Lynx Cat",
     "instock": 10,
