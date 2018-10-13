@@ -9,10 +9,10 @@ export class DataService {
 
   constructor(private http: HttpClient) { }
 
-  private messageSource = new BehaviorSubject('No');
-  currentMessage = this.messageSource.asObservable();
+  private loginStatus = new BehaviorSubject('No');
+  currentMessage = this.loginStatus.asObservable();
   changeMessage(message: string) {
-    this.messageSource.next(message)
+    this.loginStatus.next(message)
   }
 
   getUsers() {
