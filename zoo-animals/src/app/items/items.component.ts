@@ -9,10 +9,11 @@ import { DataService } from '../data.service';
 
 export class ItemsComponent implements OnInit {
   items$: Object;
+  isLoggedIn;
+
   constructor(private data: DataService) { }
   ngOnInit() {
-    this.data.getItems().subscribe(
-      data => this.items$ = data 
-    );
+    this.data.getItems().subscribe(data => this.items$ = data);
+    this.data.currentMessage.subscribe(message => this.isLoggedIn = message)
   }
 }

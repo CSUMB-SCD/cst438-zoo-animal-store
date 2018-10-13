@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,12 +11,15 @@ import { DataService } from '../data.service';
 export class LoginComponent implements OnInit {
   users$: Object;
 
-  constructor(private data: DataService) {}
+  constructor(private data: DataService, private router: Router) {}
+
+  signedIn = "No"
 
   onSubmit(username, password) {
     let i = 0
     let size = 0
-    let success = false;
+    let success = false
+
     for (let user in this.users$) {
       size++;
     }
@@ -26,18 +30,29 @@ export class LoginComponent implements OnInit {
       i++;
     }
     if (success) {
-      console.log("Logged In!");
+      this.signedIn = "Yes"
+      this.newMessage(this.signedIn)
       document.getElementById("errorText").style.display = "none";
+      this.router.navigate(['/items']);
     }
     else {
-      console.log("Login Failed");
+      this.signedIn = "No";
+      this.newMessage(this.signedIn)
       document.getElementById("errorText").style.display = "block";
     }
   }
 
   ngOnInit() {
-    this.data.getUsers().subscribe(
-      data => this.users$ = data 
-    );
+    this.data.getUsers().subscribe(data => this.users$ = data);
+    this.data.currentMessage.subscribe(message => this.signedIn = message);
+  }
+
+  newMessage(changeStatus) {
+    this.data.changeMessage(changeStatus)
+  }
+
+  signOut() {
+    this.signedIn = "No"
+    this.newMessage(this.signedIn)
   }
 }
