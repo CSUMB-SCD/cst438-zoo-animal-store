@@ -1,0 +1,8 @@
+#errorText {
+    color: red; 
+    font-weight: bold; 
+    display: none; 
+    margin-left: auto; 
+    margin-right: auto; 
+    text-align: center;
+}

@@ -1,5 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
 
+.input {
+    width: 450px;
+    height: 30px;
+    font-size: 24px;
+}
+
+.button {
+    height: 32px;
+    background-color: #93C545;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 24px;
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
 .menulink {
     color: white;
     font-size: 12px;
