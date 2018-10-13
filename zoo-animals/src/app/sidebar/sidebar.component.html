@@ -1,14 +1,14 @@
 <nav>
   <ul>
     <li>
-      <a routerLink="">
+      <a routerLink="" [class.activated]="currentUrl == '/'">
           <i class="material-icons">fingerprint</i>
       </a>
     </li>
     <li>
-        <a routerLink="items">
+        <a routerLink="items" [class.activated]="currentUrl == '/items'">
           <i class="material-icons">view_list</i>
         </a>
-      </li>
+    </li>
   </ul>
 </nav>

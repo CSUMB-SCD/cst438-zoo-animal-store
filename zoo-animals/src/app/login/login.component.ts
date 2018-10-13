@@ -9,10 +9,13 @@ import { DataService } from '../data.service';
 
 export class LoginComponent implements OnInit {
   users$: Object;
-  constructor(private data: DataService) { }
+  
+  constructor(private data: DataService) {}
+
   ngOnInit() {
     this.data.getUsers().subscribe(
       data => this.users$ = data 
     );
   }
+
 }

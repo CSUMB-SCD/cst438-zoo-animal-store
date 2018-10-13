@@ -19,6 +19,9 @@ body {
    height: 100%;
 
    #content {
+       width: 500px;
+       margin-left: auto;
+       margin-right: auto;
        padding: 30px 50px;
 
        ul {
@@ -35,7 +38,7 @@ body {
                    font-size: 1.5em;
                    text-decoration: none;
                    font-weight: bold;
-                   color:#00A8FF;
+                   color: black;
                }
        
                ul {
