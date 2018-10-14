@@ -1,9 +1,9 @@
 <div *ngIf="isLoggedIn == 'Yes'">
   <h1>Cart Under Construction</h1>
   <ul>
-    <li *ngFor="let item of items$">
+    <li *ngFor="let itemID of itemsInCart.keys()">
       <ul>
-        <li><a routerLink="/details/{{item.id}}">{{ item.name }}</a></li>
+        <li>{{ items$[itemID - 1].name  }} {{ itemsInCart.get(itemID) }}</li>
       </ul>
     </li>
   </ul>

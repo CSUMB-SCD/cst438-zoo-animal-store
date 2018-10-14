@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.data.getUsers().subscribe(data => this.users$ = data);
-    this.data.currentMessage.subscribe(message => this.signedIn = message);
+    this.data.currentStatus.subscribe(message => this.signedIn = message);
   }
 
   newMessage(changeStatus) {

@@ -14,6 +14,6 @@ export class ItemsComponent implements OnInit {
   constructor(private data: DataService) { }
   ngOnInit() {
     this.data.getItems().subscribe(data => this.items$ = data);
-    this.data.currentMessage.subscribe(message => this.isLoggedIn = message)
+    this.data.currentStatus.subscribe(message => this.isLoggedIn = message)
   }
 }

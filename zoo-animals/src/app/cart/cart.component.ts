@@ -8,10 +8,15 @@ import { DataService } from '../data.service';
 })
 
 export class CartComponent implements OnInit {
-  isLoggedIn;
+  isLoggedIn
+  itemsInCart
+  items$: Object
+
   constructor(private data: DataService) { }
 
   ngOnInit() {
-    this.data.currentMessage.subscribe(message => this.isLoggedIn = message)
+    this.data.getItems().subscribe(data => this.items$ = data);
+    this.data.currentStatus.subscribe(message => this.isLoggedIn = message)
+    this.itemsInCart = this.data.getCart()
   }
 }

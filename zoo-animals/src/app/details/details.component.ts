@@ -21,4 +21,8 @@ export class DetailsComponent implements OnInit {
     );
   }
 
+  addToCart(itemNumber, numberOfItem) {
+    this.data.addToCartService(itemNumber, numberOfItem)
+  }
+
 }
