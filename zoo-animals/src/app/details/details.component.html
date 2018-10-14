@@ -1,8 +1,28 @@
 <h1>{{ item$.name }}</h1>
 
 <ul>
-  <li><img src="../../../assets/animalImages/{{ item$.image }}" style="width:150px; height:150px; margin-left: auto; margin-right: auto;"/></li>
-  <li><strong>Description: </strong> {{ item$.description }}</li>
+  <li>
+    <table>
+      <tr>
+        <td rowspan="2">
+          <img src="../../../assets/animalImages/{{ item$.image }}" style="width:150px; height:150px; margin-left: auto; margin-right: auto; padding-right: 10px;" />
+        </td>
+        <td>
+          <strong>Description: </strong>{{ item$.description }}
+        </td>
+      </tr>
+      <tr>
+        <td>
+
+          <input class="input" style="width: 45px; height: 26px; float: left;" type="number" #count value=1 />
+          <div class="button" style="width: 140px; float: right;">
+            <p class="buttonText" style='-webkit-margin-top-collapse: discard;'>Add to Cart</p>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </li>
+
   <li><strong>Price: </strong> ${{ item$.price | number:"0.2" }}</li>
   <li><strong>Units in Stock: </strong> {{ item$.instock }}</li>
 </ul>
