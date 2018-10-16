@@ -1,4 +1,4 @@
-<div *ngIf="signedIn != 'Yes'">
+<div *ngIf="isLoggedIn != 'Yes'">
   <h1>Please Sign In</h1>
   <ul>
     <li>
@@ -14,7 +14,7 @@
   </ul>
 </div>
 
-<div *ngIf="signedIn == 'Yes'">
+<div *ngIf="isLoggedIn == 'Yes'">
   <h1>You're Already Signed In</h1>
   <ul>
     <li>
