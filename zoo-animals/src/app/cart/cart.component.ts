@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: 'app-cart',
@@ -14,7 +15,7 @@ export class CartComponent implements OnInit {
   ids = []
   countArray = []
 
-  constructor(private data: DataService) { }
+  constructor(private route: ActivatedRoute, private data: DataService) { }
 
   ngOnInit() {
     this.data.getItems().subscribe(data => this.items$ = data);
@@ -29,5 +30,10 @@ export class CartComponent implements OnInit {
       total += value.price * key
     });
     return total
+  }
+
+  remove(itemToRemove) {
+    this.data.removeItemFromCart(itemToRemove)
+    this.countArray = Array.from(this.itemsInCart.keys());
   }
 }

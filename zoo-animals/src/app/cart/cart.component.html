@@ -4,21 +4,25 @@
     <li *ngFor="let item of countArray">
       <ul>
         <li>
-          <table>
+          <table width="480px">
             <tr>
-              <td><strong>Name:</strong></td>
+              <td style="text-align: right;"><strong>Name:</strong></td>
               <td>{{ item.name  }}</td>
-            </tr>
-            <tr>
-              <td><strong>Quantity:</strong></td>
+              <td width="10px"></td>
+              <td style="text-align: right;"><strong>Quantity:</strong></td>
               <td>{{ itemsInCart.get(item) }}</td>
+              <td width="10px"></td>
+              <td rowspan="2">
+                  <div class="button" style="width: 95px; float: right; margin-top: 10px;">
+                      <p class="buttonText" style='-webkit-margin-top-collapse: discard;' (click)="remove(item)" routerLink="/cart">Remove</p>
+                  </div>
+              </td>
             </tr>
             <tr>
-              <td><strong>Unit Cost:</strong></td>
+              <td style="text-align: right;"><strong>Unit Cost:</strong></td>
               <td>${{ item.price | number:"0.2" }}</td>
-            </tr>
-            <tr>
-              <td><strong>Total Cost:</strong></td>
+              <td width="10px"></td>
+              <td style="text-align: right;"><strong>Total Cost:</strong></td>
               <td>${{ item.price * itemsInCart.get(item) | number:"0.2" }}</td>
             </tr>
           </table>

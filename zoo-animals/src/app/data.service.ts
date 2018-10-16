@@ -31,5 +31,8 @@ export class DataService {
   addToCartService(item, numberOfItem) {
     this.itemsInCart.set(item, Number(numberOfItem))
   }
+  removeItemFromCart(itemToRemove){
+    this.itemsInCart.delete(itemToRemove)
+  }
 
 }
