@@ -24,7 +24,7 @@ export class DataService {
 
 
   // attempt to store cross page hash map for the shopping cart
-  private itemsInCart = new Map<Object,number>();
+  private itemsInCart = new Map<Object,number>()
   getCart() {
     return this.itemsInCart
   }
@@ -33,6 +33,9 @@ export class DataService {
   }
   removeItemFromCart(itemToRemove){
     this.itemsInCart.delete(itemToRemove)
+  }
+  clearCart(){
+    this.itemsInCart = new Map<Object,number>()
   }
 
 }

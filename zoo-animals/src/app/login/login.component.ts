@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
 
   constructor(private data: DataService, private router: Router) {}
 
-  signedIn = "No"
+  isLoggedIn = "No"
 
   onSubmit(username, password) {
     let i = 0
@@ -30,21 +30,21 @@ export class LoginComponent implements OnInit {
       i++;
     }
     if (success) {
-      this.signedIn = "Yes"
-      this.newMessage(this.signedIn)
+      this.isLoggedIn = "Yes"
+      this.newMessage(this.isLoggedIn)
       document.getElementById("errorText").style.display = "none";
       this.router.navigate(['/items']);
     }
     else {
-      this.signedIn = "No";
-      this.newMessage(this.signedIn)
+      this.isLoggedIn = "No";
+      this.newMessage(this.isLoggedIn)
       document.getElementById("errorText").style.display = "block";
     }
   }
 
   ngOnInit() {
     this.data.getUsers().subscribe(data => this.users$ = data);
-    this.data.currentStatus.subscribe(message => this.signedIn = message);
+    this.data.currentStatus.subscribe(message => this.isLoggedIn = message);
   }
 
   newMessage(changeStatus) {
@@ -52,7 +52,8 @@ export class LoginComponent implements OnInit {
   }
 
   signOut() {
-    this.signedIn = "No"
-    this.newMessage(this.signedIn)
+    this.isLoggedIn = "No"
+    this.data.clearCart()
+    this.newMessage(this.isLoggedIn)
   }
 }

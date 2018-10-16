@@ -16,4 +16,11 @@ export class ItemsComponent implements OnInit {
     this.data.getItems().subscribe(data => this.items$ = data);
     this.data.currentStatus.subscribe(message => this.isLoggedIn = message)
   }
+
+  signOut() {
+    this.isLoggedIn = "No"
+    this.data.clearCart()
+    this.data.changeMessage("No")
+  }
+
 }
