@@ -21,9 +21,7 @@ export class DataService {
   getItems() { return this.http.get('../assets/items.json') }
   getItem() { return this.http.get('../assets/items.json') }
 
-
-
-  // attempt to store cross page hash map for the shopping cart
+  // store cross page map for the shopping cart
   private itemsInCart = new Map<Object,number>()
   getCart() {
     return this.itemsInCart

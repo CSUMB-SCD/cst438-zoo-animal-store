@@ -32,6 +32,11 @@
     <li>
         <strong>Grand Total: </strong>${{ getGrandTotal() | number:"0.2"}}
     </li>
+    <li>
+        <div class="button" style="width: 120px" button #submit (click)="signOut()">
+          <p class="buttonText">Sign Out</p>
+        </div>
+    </li>
   </ul>
 </div>
   

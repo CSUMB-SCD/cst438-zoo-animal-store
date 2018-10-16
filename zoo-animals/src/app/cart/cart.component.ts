@@ -36,4 +36,10 @@ export class CartComponent implements OnInit {
     this.data.removeItemFromCart(itemToRemove)
     this.countArray = Array.from(this.itemsInCart.keys());
   }
+
+  signOut() {
+    this.isLoggedIn = "No"
+    this.data.clearCart()
+    this.data.changeMessage("No")
+  }
 }
