@@ -8,15 +8,26 @@ import { DataService } from '../data.service';
 })
 
 export class CartComponent implements OnInit {
-  isLoggedIn
-  itemsInCart
-  items$: Object
+  isLoggedIn;
+  itemsInCart;
+  items$;
+  ids = []
+  countArray = []
 
   constructor(private data: DataService) { }
 
   ngOnInit() {
     this.data.getItems().subscribe(data => this.items$ = data);
-    this.data.currentStatus.subscribe(message => this.isLoggedIn = message)
-    this.itemsInCart = this.data.getCart()
+    this.data.currentStatus.subscribe(message => this.isLoggedIn = message);
+    this.itemsInCart = this.data.getCart();
+    this.countArray = Array.from(this.itemsInCart.keys());
+  }
+
+  getGrandTotal() {
+    var total = 0
+    this.itemsInCart.forEach((key, value) => {
+      total += value.price * key
+    });
+    return total
   }
 }

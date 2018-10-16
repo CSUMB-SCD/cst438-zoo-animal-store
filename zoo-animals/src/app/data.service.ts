@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs';
-import { getCreationMode } from '@angular/core/src/render3/instructions';
 
 @Injectable({
   providedIn: 'root'
@@ -22,13 +21,15 @@ export class DataService {
   getItems() { return this.http.get('../assets/items.json') }
   getItem() { return this.http.get('../assets/items.json') }
 
+
+
   // attempt to store cross page hash map for the shopping cart
-  private itemsInCart = new Map<number,number>();
+  private itemsInCart = new Map<Object,number>();
   getCart() {
     return this.itemsInCart
   }
-  addToCartService(itemNumber, numberOfItem) {
-    this.itemsInCart.set(itemNumber,numberOfItem)
+  addToCartService(item, numberOfItem) {
+    this.itemsInCart.set(item, Number(numberOfItem))
   }
 
 }

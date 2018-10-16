@@ -1,10 +1,32 @@
 <div *ngIf="isLoggedIn == 'Yes'">
-  <h1>Cart Under Construction</h1>
+  <h1>Shopping Cart</h1>
   <ul>
-    <li *ngFor="let itemID of itemsInCart.keys()">
+    <li *ngFor="let item of countArray">
       <ul>
-        <li>{{ items$[itemID - 1].name  }} {{ itemsInCart.get(itemID) }}</li>
+        <li>
+          <table>
+            <tr>
+              <td><strong>Name:</strong></td>
+              <td>{{ item.name  }}</td>
+            </tr>
+            <tr>
+              <td><strong>Quantity:</strong></td>
+              <td>{{ itemsInCart.get(item) }}</td>
+            </tr>
+            <tr>
+              <td><strong>Unit Cost:</strong></td>
+              <td>${{ item.price | number:"0.2" }}</td>
+            </tr>
+            <tr>
+              <td><strong>Total Cost:</strong></td>
+              <td>${{ item.price * itemsInCart.get(item) | number:"0.2" }}</td>
+            </tr>
+          </table>
+        </li>
       </ul>
+    </li>
+    <li>
+        <strong>Grand Total: </strong>${{ getGrandTotal() | number:"0.2"}}
     </li>
   </ul>
 </div>
