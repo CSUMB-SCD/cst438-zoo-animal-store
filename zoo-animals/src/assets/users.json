@@ -1,19 +1,23 @@
 [
     {
         "username": "Peter",
-        "password": "password"
+        "password": "password",
+        "credit": 50.00
     },
     {
         "username": "AJ",
-        "password": "password"
+        "password": "password",
+        "credit": 50.00
     },
     {
         "username": "Victoria",
-        "password": "password"
+        "password": "password",
+        "credit": 10.00
     },
     {
         "username": "admin",
-        "password": "password"
+        "password": "password",
+        "credit": 40.00
     }
 ]
 
