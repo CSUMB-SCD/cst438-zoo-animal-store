@@ -8,10 +8,11 @@ import { ActivatedRoute } from "@angular/router";
   styleUrls: ['./details.component.css']
 })
 export class DetailsComponent implements OnInit {
-
+  isLoggedIn
   item$: Object;
   
   constructor(private route: ActivatedRoute, private data: DataService) { 
+    this.data.currentStatus.subscribe(message => this.isLoggedIn = message);
      this.route.params.subscribe( params => this.item$ = params.id );
   }
 
@@ -23,6 +24,12 @@ export class DetailsComponent implements OnInit {
 
   addToCart(itemNumber, numberOfItem) {
     this.data.addToCartService(itemNumber, numberOfItem)
+  }
+
+  signOut() {
+    this.isLoggedIn = "No"
+    this.data.clearCart()
+    this.data.changeMessage("No")
   }
 
 }

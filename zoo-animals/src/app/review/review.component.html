@@ -3,6 +3,9 @@
   <div class="button" style="width: 120px; background-color: #455232;" (click)="buyNow()" routerLink="/thanks">
     <p class="buttonText">Buy Now!</p>
   </div>
+  <div class="button" style="width: 120px" button #submit (click)="signOut()">
+    <p class="buttonText">Sign Out</p>
+  </div>
 </div>
       
 <div *ngIf="isLoggedIn != 'Yes'">
