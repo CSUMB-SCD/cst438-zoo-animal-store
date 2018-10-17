@@ -19,12 +19,13 @@ export class DetailsComponent implements OnInit {
   ngOnInit() {
     this.data.getItem().subscribe(
       data => this.item$ = data[this.route.params["value"].id - 1]
-    );
+    )
+    document.getElementById("cartNotification").style.display = "none";
   }
 
   addToCart(itemNumber, numberOfItem) {
     this.data.addToCartService(itemNumber, numberOfItem)
-    //document.getElementById("cartNotification").style.display = "block";
+    document.getElementById("cartNotification").style.display = "block";
   }
 
   signOut() {
