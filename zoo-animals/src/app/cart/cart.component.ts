@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { DataService } from '../data.service';
-import { ActivatedRoute } from "@angular/router";
+import { Component, OnInit } from '@angular/core'
+import { DataService } from '../data.service'
+import { ActivatedRoute } from "@angular/router"
 
 @Component({
   selector: 'app-cart',
@@ -9,19 +9,18 @@ import { ActivatedRoute } from "@angular/router";
 })
 
 export class CartComponent implements OnInit {
-  isLoggedIn;
-  itemsInCart;
-  items$;
-  ids = []
+  isLoggedIn
+  itemsInCart
+  items$
   countArray = []
 
   constructor(private route: ActivatedRoute, private data: DataService) { }
 
   ngOnInit() {
-    this.data.getItems().subscribe(data => this.items$ = data);
-    this.data.currentStatus.subscribe(message => this.isLoggedIn = message);
-    this.itemsInCart = this.data.getCart();
-    this.countArray = Array.from(this.itemsInCart.keys());
+    this.data.getItems().subscribe(data => this.items$ = data)
+    this.data.currentStatus.subscribe(message => this.isLoggedIn = message)
+    this.itemsInCart = this.data.getCart()
+    this.countArray = Array.from(this.itemsInCart.keys())
   }
 
   getGrandTotal() {
@@ -34,7 +33,7 @@ export class CartComponent implements OnInit {
 
   remove(itemToRemove) {
     this.data.removeItemFromCart(itemToRemove)
-    this.countArray = Array.from(this.itemsInCart.keys());
+    this.countArray = Array.from(this.itemsInCart.keys())
   }
 
   signOut() {
