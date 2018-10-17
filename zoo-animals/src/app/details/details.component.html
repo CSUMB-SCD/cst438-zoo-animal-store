@@ -1,0 +1,55 @@
+<div *ngIf="isLoggedIn == 'Yes'">
+  <h1>{{ item$.name }}</h1>
+  <ul>
+    <li>
+      <table>
+        <tr>
+          <td rowspan="2">
+            <img src="../../../assets/animalImages/{{ item$.image }}" style="width:150px; height:150px; margin-left: auto; margin-right: auto; padding-right: 10px;" />
+          </td>
+          <td>
+            <strong>Description: </strong>{{ item$.description }}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input class="input" style="width: 70px; height: 26px; float: left;" type="number" min="1" max="{{item$.instock}}"
+              #count value=1 />
+            <div class="button" style="width: 140px; float: right;">
+              <p class="buttonText" style='-webkit-margin-top-collapse: discard;' (click)="addToCart(item$,count.value)">Add
+                to Cart</p>
+            </div>
+          </td>
+        </tr>
+        <!--<tr>
+            <p id="cartNotification">Your Cart Was Updated</p>
+        </tr>-->
+      </table>
+    </li>
+    <li><strong style="padding-left: 10px;">Price: </strong> ${{ item$.price | number:"0.2" }}</li>
+    <li><strong style="padding-left: 10px;">Units in Stock: </strong> {{ item$.instock }}</li>
+  </ul>
+
+  <div class="button" style="width: 180px" routerLink="/cart">
+    <p class="buttonText">Go To Cart</p>
+  </div>
+
+  <div class="button" style="width: 220px" routerLink="/items">
+    <p class="buttonText">Back to All Items</p>
+  </div>
+
+  <div class="button" style="width: 120px" button #submit (click)="signOut()">
+    <p class="buttonText">Sign Out</p>
+  </div>
+</div>
+
+<div *ngIf="isLoggedIn != 'Yes'">
+  <h1>Please Sign In To Shop</h1>
+  <ul>
+    <li>
+      <div class="button" style="width: 200px" routerLink="">
+        <p class="buttonText">Go to Sign In</p>
+      </div>
+    </li>
+  </ul>
+</div>

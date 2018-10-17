@@ -1,0 +1,56 @@
+<div *ngIf="isLoggedIn == 'Yes'">
+  <h1>Please Enter Checkout Info</h1>
+  <ul>
+    <li>
+      <table>
+        <tr>
+          <td>
+            <p class="basicText">First Name:</p><input class="input" style="width: 200px;" type="text" #firstNname />
+          </td>
+          <td>
+            <p class="basicText">Last Name:</p><input class="input" style="width: 200px;" type="text" #lastName />
+          </td>
+        </tr>
+      </table>
+      <p class="basicText">Email Address:</p><input class="input" type="text" #email />
+      <p class="basicText">Street Address:</p><input class="input" type="text" #address />
+      <table>
+        <tr>
+          <td>
+            <p class="basicText">Card Number:</p><input class="input" style="width: 200px;" type="text" #cardNumber />
+          </td>
+          <td>
+            <p class="basicText">Security Code:</p><input class="input" style="width: 200px;" type="text" #securityCode />
+          </td>
+        </tr>
+      </table>
+      <table>
+          <tr>
+            <td>
+              <p class="basicText">Expiration Month:</p><input class="input"style="width: 200px;" type="number" min="1" max="12" #expirationMonth />
+            </td>
+            <td>
+              <p class="basicText">Expiration Year:</p><input style="width: 200px;" class="input" type="number" min="2018" max="2050" #expirationYear />
+            </td>
+          </tr>
+        </table>
+      </li>
+  </ul>
+  <div class="button" style="width: 230px; background-color: #455232;" routerLink="/review">
+    <p class="buttonText">Review Your Order</p>
+  </div>
+  <div class="button" style="width: 220px" routerLink="/items">
+    <p class="buttonText">Back to Cart</p>
+  </div>
+</div>
+    
+<div *ngIf="isLoggedIn != 'Yes'">
+  <h1>Please Sign In To Shop</h1>
+  <ul>
+    <li>
+      <div class="button" style="width: 200px" routerLink="">
+        <p class="buttonText">Go to Sign In</p>
+      </div>
+    </li>
+  </ul>
+</div>
