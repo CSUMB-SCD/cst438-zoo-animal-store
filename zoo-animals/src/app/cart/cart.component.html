@@ -1,5 +1,5 @@
 <div *ngIf="isLoggedIn == 'Yes'">
-  <h1>Shopping Cart</h1>
+  <h1>Your Shopping Cart</h1>
   <ul>
     <li *ngFor="let item of countArray">
       <ul>
@@ -32,12 +32,16 @@
     <li>
         <strong>Grand Total: </strong>${{ getGrandTotal() | number:"0.2"}}
     </li>
-    <li>
-        <div class="button" style="width: 120px" button #submit (click)="signOut()">
-          <p class="buttonText">Sign Out</p>
-        </div>
-    </li>
   </ul>
+  <div class="button" style="width: 150px; background-color: #455232;" routerLink="/checkout">
+    <p class="buttonText">Check Out!</p>
+  </div>
+  <div class="button" style="width: 220px" routerLink="/items">
+    <p class="buttonText">Back to All Items</p>
+  </div>
+  <div class="button" style="width: 120px" button #submit (click)="signOut()">
+    <p class="buttonText">Sign Out</p>
+  </div>
 </div>
   
 <div *ngIf="isLoggedIn != 'Yes'">

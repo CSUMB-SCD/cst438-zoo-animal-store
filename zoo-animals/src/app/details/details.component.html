@@ -23,9 +23,13 @@
     </table>
   </li>
 
-  <li><strong>Price: </strong> ${{ item$.price | number:"0.2" }}</li>
-  <li><strong>Units in Stock: </strong> {{ item$.instock }}</li>
+  <li><strong style="padding-left: 10px;">Price: </strong> ${{ item$.price | number:"0.2" }}</li>
+  <li><strong style="padding-left: 10px;">Units in Stock: </strong> {{ item$.instock }}</li>
 </ul>
+
+<div class="button" style="width: 180px" routerLink="/cart">
+  <p class="buttonText">Go To Cart</p>
+</div>
 
 <div class="button" style="width: 220px" routerLink="/items">
   <p class="buttonText">Back to All Items</p>
