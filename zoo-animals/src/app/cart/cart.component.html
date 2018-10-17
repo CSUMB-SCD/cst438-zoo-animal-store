@@ -1,5 +1,6 @@
 <div *ngIf="isLoggedIn == 'Yes'">
-  <h1>Your Shopping Cart</h1>
+  <h1 *ngIf="getGrandTotal() > 0">Your Shopping Cart</h1>
+  <h1 *ngIf="getGrandTotal() == 0">Your Cart Is Empty</h1>
   <ul>
     <li *ngFor="let item of countArray">
       <ul>
@@ -29,11 +30,11 @@
         </li>
       </ul>
     </li>
-    <li>
+    <li *ngIf="getGrandTotal() > 0">
         <strong>Grand Total: </strong>${{ getGrandTotal() | number:"0.2"}}
     </li>
   </ul>
-  <div class="button" style="width: 150px; background-color: #455232;" routerLink="/checkout">
+  <div *ngIf="getGrandTotal() > 0" class="button" style="width: 150px; background-color: #455232;" routerLink="/checkout">
     <p class="buttonText">Check Out!</p>
   </div>
   <div class="button" style="width: 220px" routerLink="/items">
