@@ -1,2 +1,5 @@
 # cst438-zoo-animal-store
-The repo for Team 12's Software Engineering class project 1
+This is our Zoo Shop!
+Created By: Victoria, AJ and Peter
+
+Checklist of what we need to do:
