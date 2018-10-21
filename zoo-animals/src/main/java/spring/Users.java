@@ -1,4 +1,4 @@
-package main.java.spring;
+package spring;
 
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
