@@ -1,0 +1,57 @@
+<div *ngIf="isLoggedIn == 'Yes'">
+  <h1 *ngIf="getGrandTotal() > 0">Your Shopping Cart</h1>
+  <h1 *ngIf="getGrandTotal() == 0">Your Cart Is Empty</h1>
+  <ul>
+    <li *ngFor="let item of countArray">
+      <ul>
+        <li>
+          <table width="480px">
+            <tr>
+              <td style="text-align: right;"><strong>Name:</strong></td>
+              <td>{{ item.name  }}</td>
+              <td width="10px"></td>
+              <td style="text-align: right;"><strong>Quantity:</strong></td>
+              <td>{{ itemsInCart.get(item) }}</td>
+              <td width="10px"></td>
+              <td rowspan="2">
+                  <div class="button" style="width: 95px; float: right; margin-top: 10px;">
+                      <p class="buttonText" style='-webkit-margin-top-collapse: discard;' (click)="remove(item)" routerLink="/cart">Remove</p>
+                  </div>
+              </td>
+            </tr>
+            <tr>
+              <td style="text-align: right;"><strong>Unit Cost:</strong></td>
+              <td>${{ item.price | number:"0.2" }}</td>
+              <td width="10px"></td>
+              <td style="text-align: right;"><strong>Total Cost:</strong></td>
+              <td>${{ item.price * itemsInCart.get(item) | number:"0.2" }}</td>
+            </tr>
+          </table>
+        </li>
+      </ul>
+    </li>
+    <li *ngIf="getGrandTotal() > 0">
+        <strong>Grand Total: </strong>${{ getGrandTotal() | number:"0.2"}}
+    </li>
+  </ul>
+  <div *ngIf="getGrandTotal() > 0" class="button" style="width: 150px; background-color: #455232;" routerLink="/checkout">
+    <p class="buttonText">Check Out!</p>
+  </div>
+  <div class="button" style="width: 220px" routerLink="/items">
+    <p class="buttonText">Back to All Items</p>
+  </div>
+  <div class="button" style="width: 120px" button #submit (click)="signOut()">
+    <p class="buttonText">Sign Out</p>
+  </div>
+</div>
+  
+<div *ngIf="isLoggedIn != 'Yes'">
+  <h1>Sign In To View Your Cart</h1>
+  <ul>
+    <li>
+      <div class="button" style="width: 200px" routerLink="">
+         <p class="buttonText">Go to Sign In</p>
+      </div>
+    </li>
+  </ul>
+</div>
