@@ -1,5 +1,93 @@
 # cst438-zoo-animal-store
+
 This is our Zoo Shop!
 Created By: Victoria, AJ and Peter
 
 Checklist of what we need to do:
+
+## Home Page
+
+Required: 
+    * Logout from any page brings us home []
+    * Background promotes are product []
+    * GetUserData returns username, id, and credit/balance []
+
+Extra Credit:
+    * Be Fancy []
+
+## Sign-in Page
+
+Required:
+    * Must have username/password []
+        * Use username to obtain user data ()
+        * Password can just be a textbox ()
+        * Error shows if username/id not found ()
+        
+Extra Credit:
+    * Secure, best practice username/password []
+    
+## Products Page
+
+Required:
+    * List of inventory, with details shown when clicked []
+        * Product Name ()
+        * Price ()
+        * Number of items in stock ()
+        * Buy option ()
+        
+    * Must have at least eight products []
+        * Product goes out of stock when user buys too much []
+
+Extra Credit:
+    * Include low-res thumbnail images for each product item []
+
+## Details Page
+
+Required:
+    * Brought here after selecting item on “Products” page. []
+    
+    * The item details include:
+        * Product Name ()
+        * Product Description ()
+        * Price ()
+        * Number of items in stock ()
+        * A hi-res image of product item ()
+        * “Buy” option ()
+        * Number of items to “Buy” ()
+
+Extra Credit:
+    * Use an array of hi-res, dynamically clickable images []
+    
+## Checkout Page
+
+Required: 
+    * List of items in cart []
+    * Can edit number of items in cart []
+    * Has a "Confirm Purchase" []
+        * User has sufficient credit ()
+        * Sufficient amount of items in stock()
+        * Decrements user's credit ()
+        * Decrements product stock ()
+        * Sends user to confirmation page after all checks ()
+        
+Extra Credit: 
+    * Add textboxes for "billing info" []
+        * User required to fill out all fields 
+        
+## Thank You (Confirmation) Page
+
+Required: 
+    * Only arrive here if user purchase is successful []
+    
+Extra Credit: 
+    * Include "undo purchase" []
+        * Restores user credit ()
+        * Restores stock ()
+    
+
+
+
+    
+    
+
+
