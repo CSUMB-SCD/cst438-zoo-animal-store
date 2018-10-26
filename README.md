@@ -7,46 +7,45 @@ Checklist of what we need to do:
 
 # Home Page
 
-Required: 
-    - [ ] Logout from any page brings us home 
-    - [ ] Background promotes are product 
-    - [ ] GetUserData returns username, id, and credit/balance 
+Required: <br>
+    * - [ ] Logout from any page brings us home <br>
+    * - [ ] Background promotes our product <br>
+    * - [ ] GetUserData returns username, id, and credit/balance 
 
-Extra Credit:
-    - [ ] Be Fancy 
+Extra Credit: <br>
+    - [] Be Fancy 
 
 # Sign-in Page
 
-Required:
-    - [ ] Must have username/password 
-        * Use username to obtain user data 
-        * Password can just be a textbox 
-        * Error shows if username/id not found 
+Required: <br>
+    - [ ] Must have username/password <br>
+            * Use username to obtain user data <br>
+            * Password can just be a textbox <br>
+            * Error shows if username/id not found <r>
         
-Extra Credit:
+Extra Credit: <br>
     - [ ] Secure, best practice username/password 
     
 # Products Page
 
-Required:
-    - [ ] List of inventory, with details shown when clicked 
-        * Product Name 
-        * Price 
-        * Number of items in stock 
-        * Buy option 
-        
-    - [ ] Must have at least eight products 
-        * Product goes out of stock when user buys too much 
-
-Extra Credit:
+Required: <br>
+    - [ ] List of inventory, with details shown when clicked <br>
+            * Product Name <br>
+            * Price <br>
+            * Number of items in stock <br>
+            * Buy option <br>
+    
+   - [ ] Must have at least 8 products <br>
+            * Products can be out of stock
+Extra Credit: <br>
     - [ ] Include low-res thumbnail images for each product item 
 
 # Details Page
 
-Required:
-    - [ ] Brought here after selecting item on “Products” page. 
+Required: <br>
+   - [ ] Brought here after selecting item on “Products” page. <br>
     
-    - [ ] The item details include:
+   - [ ] The item details include:
         * Product Name 
         * Product Description 
         * Price 
