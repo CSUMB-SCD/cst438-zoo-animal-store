@@ -18,7 +18,7 @@ Extra Credit: <br>
 ## Sign-in Page
 
 Required: <br>
-  - [ ] Must have username/password 
+  - [x] Must have username/password 
       * Use username to obtain user data <br>
       * Password can just be a textbox <br>
       * Error shows if username/id not found <br>
@@ -29,7 +29,7 @@ Extra Credit: <br>
 ## Products Page
 
 Required: <br>
-  - [ ] List of inventory, with details shown when clicked 
+  - [x] List of inventory, with details shown when clicked 
       * Product Name 
       * Price 
       * Number of items in stock
@@ -44,9 +44,9 @@ Extra Credit: <br>
 ## Details Page
 
 Required: <br>
- - [ ] Brought here after selecting item on “Products” page. <br>
+ - [x] Brought here after selecting item on “Products” page. <br>
     
- - [ ] The item details include:
+ - [x] The item details include:
      * Product Name 
      * Product Description 
      * Price 
@@ -61,7 +61,7 @@ Extra Credit:
 ## Checkout Page
 
 Required: 
-  - [ ] List of items in cart 
+  - [x] List of items in cart 
   - [ ] Can edit number of items in cart 
   - [ ] Has a "Confirm Purchase" 
       * User has sufficient credit 
