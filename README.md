@@ -7,10 +7,10 @@ Checklist of what we need to do:
 
 ## Home Page
 
-Required: <br>
-  - [ ] Logout from any page brings user home <br>
-  - [ ] Background promotes our product <br>
-  - [ ] GetUserData returns username, id, and credit/balance 
+Required: 
+- [ ] Logout from any page brings user home
+- [ ] GetUserData returns username, id, and credit/balance 
+- [x] Background promotes our product
 
 Extra Credit: <br>
   - [ ] Be Fancy 
