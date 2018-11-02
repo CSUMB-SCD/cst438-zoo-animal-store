@@ -25,8 +25,8 @@ export class CartComponent implements OnInit {
 
   getGrandTotal() {
     var total = 0
-    this.itemsInCart.forEach((key, value) => {
-      total += value.price * key
+    this.itemsInCart.forEach((value, key) => {
+      total += key.price * value[0]
     });
     return total
   }

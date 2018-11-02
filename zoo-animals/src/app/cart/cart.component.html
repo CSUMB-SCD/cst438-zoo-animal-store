@@ -11,7 +11,7 @@
               <td>{{ item.name  }}</td>
               <td width="10px"></td>
               <td style="text-align: right;"><strong>Quantity:</strong></td>
-              <td>{{ itemsInCart.get(item) }}</td>
+              <td>{{ itemsInCart.get(item)[0] }}</td>
               <td width="10px"></td>
               <td rowspan="2">
                   <div class="button" style="width: 95px; float: right; margin-top: 10px;">
@@ -24,7 +24,7 @@
               <td>${{ item.price | number:"0.2" }}</td>
               <td width="10px"></td>
               <td style="text-align: right;"><strong>Total Cost:</strong></td>
-              <td>${{ item.price * itemsInCart.get(item) | number:"0.2" }}</td>
+              <td>${{ item.price * itemsInCart.get(item)[0] | number:"0.2" }}</td>
             </tr>
           </table>
         </li>
