@@ -12,7 +12,7 @@ import { ItemsComponent } from './items/items.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { ThanksComponent } from './thanks/thanks.component';
-import {HomeComponent} from './home/home.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -25,13 +25,15 @@ import {HomeComponent} from './home/home.component';
     SidebarComponent,
     CheckoutComponent,
     ThanksComponent,
-    HomeComponent
+    HomeComponent,
+    
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
