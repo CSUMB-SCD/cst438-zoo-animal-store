@@ -1,6 +1,11 @@
 <nav>
   <ul>
     <li>
+      <a routerLink="home" [class.activated]="currentUrl == '/home'">
+        <i class="material-icons">home</i>
+      </a>
+    </li>
+    <li>
       <a routerLink="" [class.activated]="currentUrl == '/'">
         <i class="material-icons">fingerprint</i>
       </a>

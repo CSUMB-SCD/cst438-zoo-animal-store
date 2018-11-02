@@ -12,6 +12,7 @@ import { ItemsComponent } from './items/items.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { ThanksComponent } from './thanks/thanks.component';
+import {HomeComponent} from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,9 @@ import { ThanksComponent } from './thanks/thanks.component';
     ItemsComponent,
     SidebarComponent,
     CheckoutComponent,
-    ThanksComponent
+    ThanksComponent,
+    HomeComponent
+    
   ],
   imports: [
     BrowserModule,

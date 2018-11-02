@@ -7,8 +7,13 @@ import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { ReviewComponent } from './review/review.component';
 import { ThanksComponent } from './thanks/thanks.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
+  {
+    path: 'home',
+    component: HomeComponent
+  },
   {
     path: '',
     component: LoginComponent
