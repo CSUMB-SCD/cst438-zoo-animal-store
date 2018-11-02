@@ -22,18 +22,23 @@ export class DataService {
   getItem() { return this.http.get('../assets/items.json') }
 
   // store cross page map for the shopping cart
-  private itemsInCart = new Map<Object,number>()
+  private itemsInCart = new Map<Object,[number, number]>()
   getCart() {
     return this.itemsInCart
   }
-  addToCartService(item, numberOfItem) {
-    this.itemsInCart.set(item, Number(numberOfItem))
+  addToCartService(item, numberOfItem) {  
+    this.itemsInCart.forEach((value, key) => {
+      if (item.itemNumber == value[1]) {
+        this.itemsInCart.delete(key)
+      }
+    });
+    this.itemsInCart.set(item, [numberOfItem, item.itemNumber])
   }
   removeItemFromCart(itemToRemove){
     this.itemsInCart.delete(itemToRemove)
   }
   clearCart(){
-    this.itemsInCart = new Map<Object,number>()
+    this.itemsInCart = new Map<Object,[number, number]>()
   }
 
 }
