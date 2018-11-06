@@ -1,15 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
 
 .input {
-    width: 440px;
+    width: 790px;
     height: 30px;
     font-size: 24px;
-    padding-left: 10px;
-    margin-left: 20px;
+    text-align: center;
 }
 
 .basicText {
-    padding-left: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size:25px;
+
 }
 
 .button {
@@ -19,8 +22,9 @@
     padding-left: 20px;
     padding-right: 20px;
     margin-bottom: 10px;
+    margin-top:5px;
     font-size: 24px;
-    width: 100px;
+    width: 150px;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
@@ -45,7 +49,7 @@ body {
    height: 100%;
 
    #content {
-       width: 500px;
+       width: 800px;
        margin-left: auto;
        margin-right: auto;
 
