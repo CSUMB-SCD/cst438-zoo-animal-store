@@ -14,7 +14,7 @@
               <td>{{ itemsInCart.get(item)[0] }}</td>
               <td width="10px"></td>
               <td rowspan="2">
-                  <div class="button" style="width: 95px; float: right; margin-top: 10px;">
+                  <div class="button" style="width: 140px; float: right; margin-top: 10px;">
                       <p class="buttonText" style='-webkit-margin-top-collapse: discard;' (click)="remove(item)" routerLink="/cart">Remove</p>
                   </div>
               </td>
@@ -34,10 +34,10 @@
         <strong>Grand Total: </strong>${{ getGrandTotal() | number:"0.2"}}
     </li>
   </ul>
-  <div *ngIf="getGrandTotal() > 0" class="button" style="width: 150px; background-color: #455232;" routerLink="/checkout">
+  <div *ngIf="getGrandTotal() > 0" class="button" style="width: 400px; background-color: #455232;" routerLink="/checkout">
     <p class="buttonText">Check Out!</p>
   </div>
-  <div class="button" style="width: 220px" routerLink="/items">
+  <div class="button" style="width: 400px" routerLink="/items">
     <p class="buttonText">Back to All Items</p>
   </div>
   <div class="button" style="width: 120px" button #submit (click)="signOut()">

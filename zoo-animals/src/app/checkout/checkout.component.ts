@@ -27,6 +27,11 @@ export class CheckoutComponent implements OnInit {
       });
       return total
     }
+
+    addToCart(itemNumber, numberOfItem) {
+      this.data.addToCartService(itemNumber, numberOfItem)
+      document.getElementById("cartNotification").style.display = "block";
+    }
   
     signOut() {
       this.isLoggedIn = "No"
