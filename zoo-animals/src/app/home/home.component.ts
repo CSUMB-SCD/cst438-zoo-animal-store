@@ -8,12 +8,12 @@ import { Component, OnInit } from '@angular/core';
 
 
 export class HomeComponent implements OnInit {
+  
 
   
-  images = [1, 2, 3].map(() => `../assets/carouselImages`);
-  
-  constructor() { }
+  constructor() { 
 
+  }
   ngOnInit() {
   }
 
