@@ -1,5 +1,5 @@
 <div *ngIf="isLoggedIn == 'Yes'">
-  <h1>Items For Sale:</h1>
+  <!-- <h1>Items For Sale:</h1>
   <ul>
     <li *ngFor="let item of items$">
       <ul>
@@ -12,6 +12,23 @@
   <div class="button" style="width: 120px" button #submit (click)="signOut()">
     <p class="buttonText">Sign Out</p>
   </div>
+
+-->
+
+<ul>
+  <li *ngFor="let item of items$">
+    <table>
+      <tr>
+        <td rowspan="2">
+          <img src="../../../assets/animalImages/{{ item.image }}" style="width:40px; height:40px; margin-left: auto; margin-right: auto; padding-right: 10px;" /> <a class="basicText" routerLink="/details/{{item.id}}">{{ item.name }}</a>
+        </td>
+      </tr>
+      <tr>
+    </table>
+  </li>
+</ul>
+
+
 </div>
 
 <div *ngIf="isLoggedIn != 'Yes'">
@@ -24,3 +41,5 @@
       </li>
     </ul>
 </div>
+
+
