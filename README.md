@@ -1,85 +1,27 @@
-# cst438-zoo-animal-store
+# ZooAnimals
 
-This is our Zoo Shop!
-Created By: Victoria, AJ and Peter
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.1.
 
-Checklist of what we need to do:
+## Development server
 
-## Home Page
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-Required: 
-- [ ] Logout from any page brings user home
-- [ ] GetUserData returns username, id, and credit/balance 
-- [x] Background promotes our product
+## Code scaffolding
 
-Extra Credit: <br>
-  - [ ] Be Fancy 
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Sign-in Page
+## Build
 
-Required: <br>
-  - [x] Must have username/password 
-      * Use username to obtain user data <br>
-      * Password can just be a textbox <br>
-      * Error shows if username/id not found <br>
-        
-Extra Credit: <br>
-  - [ ] Secure, best practice username/password 
-    
-## Products Page
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-Required: <br>
-  - [x] List of inventory, with details shown when clicked 
-      * Product Name 
-      * Price 
-      * Number of items in stock
-      * Buy option <br>
-    
-  - [ ] Must have at least 8 products 
-      * Products can be out of stock <br>
-      
-Extra Credit: <br>
-  - [ ] Include low-res thumbnail images for each product item 
+## Running unit tests
 
-## Details Page
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-Required: <br>
- - [x] Brought here after selecting item on “Products” page. <br>
-    
- - [x] The item details include:
-     * Product Name 
-     * Product Description 
-     * Price 
-     * Number of items in stock 
-     * A hi-res image of product item 
-     * “Buy” option 
-     * Number of items to “Buy” 
+## Running end-to-end tests
 
-Extra Credit:
-  - [ ] Use an array of hi-res, dynamically clickable images 
-    
-## Checkout Page
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-Required: 
-  - [x] List of items in cart 
-  - [ ] Can edit number of items in cart 
-  - [ ] Has a "Confirm Purchase" 
-      * User has sufficient credit 
-      * Sufficient amount of items in stock
-      * Decrements user's credit 
-      * Decrements product stock 
-      * Sends user to confirmation page after all checks 
-        
-Extra Credit: 
-  - [ ] Add textboxes for "billing info" 
-      * User required to fill out all fields 
-        
-## Thank You (Confirmation) Page
+## Further help
 
-Required: 
-  - [ ] Only arrive here if user purchase is successful 
-    
-Extra Credit: 
-  - [ ] Include "undo purchase" 
-      * Restores user credit 
-      * Restores stock 
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
