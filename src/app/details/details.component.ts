@@ -9,16 +9,17 @@ import { ActivatedRoute } from "@angular/router";
 })
 export class DetailsComponent implements OnInit {
   isLoggedIn
-  item$: Object;
+  item$
   
   constructor(private route: ActivatedRoute, private data: DataService) { 
     this.data.currentStatus.subscribe(message => this.isLoggedIn = message);
-     this.route.params.subscribe( params => this.item$ = params.id );
+    this.route.params.subscribe( params => this.item$ = params.id)
   }
 
   ngOnInit() {
-    this.data.getItem().subscribe(
-      data => this.item$ = data[this.route.params["value"].id - 1]
+    window.scrollTo(0, 0)
+    this.data.getItem(this.item$).subscribe(
+      data => this.item$ = data 
     )
     document.getElementById("cartNotification").style.display = "none";
   }

@@ -17,15 +17,21 @@ export class DataService {
   }
 
   // functions to return JSON
-  getUsers() { return this.http.get('../assets/users.json') }
-  getItems() { return this.http.get('../assets/items.json') }
-  getItem() { return this.http.get('../assets/items.json') }
+  //getUsers() { return this.http.get('../assets/users.json') }
+  //getItems() { return this.http.get('../assets/items.json') }
+  //getItem(itemNumber) { return this.http.get('../assets/items.json') }
+
+  getUsers() { return this.http.get('http://localhost:8081/users') }
+  getItems() { return this.http.get('http://localhost:8081/') }
+  getItem(itemNumber) { return this.http.get('http://localhost:8081/'+itemNumber) }
 
   // store cross page map for the shopping cart
   private itemsInCart = new Map<Object,[number, number]>()
+
   getCart() {
     return this.itemsInCart
   }
+  
   addToCartService(item, numberOfItem) {  
     this.itemsInCart.forEach((value, key) => {
       if (item.itemNumber == value[1]) {

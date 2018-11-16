@@ -17,6 +17,7 @@ export class CartComponent implements OnInit {
   constructor(private route: ActivatedRoute, private data: DataService) { }
 
   ngOnInit() {
+    window.scrollTo(0, 0)
     this.data.getItems().subscribe(data => this.items$ = data)
     this.data.currentStatus.subscribe(message => this.isLoggedIn = message)
     this.itemsInCart = this.data.getCart()
