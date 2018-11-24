@@ -14,20 +14,17 @@ public class ItemsController {
     @Autowired
     private ItemsRepository itemRepository;
 
-    @CrossOrigin(origins = "http://localhost:4200")
-    @GetMapping ("/")
+    @GetMapping ("/allItems")
     public List<Items> getAll() {
         return itemRepository.findAll();
     }
 
-    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/*")
     @RequestMapping(value = "/name/{name}", method = RequestMethod.GET)
     public Items getByName(@PathVariable("name") String name) {
         return itemRepository.findByname(name);
     }
 
-    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/*")
     @RequestMapping(value = "/{itemNumber}", method = RequestMethod.GET)
     public Items getItemNumber(@PathVariable("itemNumber") int itemNumber) {
