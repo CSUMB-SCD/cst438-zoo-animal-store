@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
   onSubmit(username, password) {
     let i = 0
     let size = 0
-    let success = false
+    let success = false // make sure to change
 
     for (let user in this.users$) {
       size++;
