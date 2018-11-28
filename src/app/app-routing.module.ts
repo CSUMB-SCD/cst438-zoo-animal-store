@@ -40,7 +40,7 @@ const routes: Routes = [
     component: ReviewComponent
   },
   {
-    path: 'details/:id',
+    path: 'details/:itemid',
     component: DetailsComponent
   },
 ];
