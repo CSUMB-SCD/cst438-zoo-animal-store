@@ -21,9 +21,9 @@ export class DataService {
   //getItems() { return this.http.get('../assets/items.json') }
   //getItem(itemNumber) { return this.http.get('../assets/items.json') }
 
-  getUsers() { return this.http.get('http://localhost:8081/users') }
-  getItems() { return this.http.get('http://localhost:8081/') }
-  getItem(itemNumber) { return this.http.get('http://localhost:8081/'+itemNumber) }
+  getUsers() { return this.http.get('https://team12-zoo-shop-spring.herokuapp.com/users') }
+  getItems() { return this.http.get('https://team12-zoo-shop-spring.herokuapp.com/') }
+  getItem(itemNumber) { return this.http.get('https://team12-zoo-shop-spring.herokuapp.com/'+itemNumber) }
 
   // store cross page map for the shopping cart
   private itemsInCart = new Map<Object,[number, number]>()
