@@ -18,7 +18,9 @@
 </div>
 
 <div *ngIf="isLoggedIn == 'Yes'">
-  <h1>You're Already Signed In</h1>
+  <h1 style="text-align: center;">You're Already Signed In</h1>
+  <br>
+  
   <ul>
     <li>
       <div class="button" style="width: 350px" button #submit (click)="signOut()">
