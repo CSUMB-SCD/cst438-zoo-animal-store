@@ -1,8 +1,6 @@
 <div *ngIf="isLoggedIn == 'Yes'">
-  <h1 *ngIf="getGrandTotal() > 0" style="text-align: center;">Your Shopping Cart</h1> <!-- Add frowny or cart -->
+  <h1 *ngIf="getGrandTotal() > 0" style="text-align: center;">Your Shopping Cart</h1> 
   <h1 *ngIf="getGrandTotal() == 0" style="text-align: center;">Your Cart Is Empty</h1>
-  <br>
-  <br>
   <ul>
     <li *ngFor="let item of countArray">
       <ul>
@@ -67,7 +65,7 @@
   <h1>Sign In To View Your Cart</h1>
   <ul>
     <li>
-      <div class="button" style="width: 200px" routerLink="">
+      <div class="button" style="width: 200px" routerLink="/login">
          <p class="buttonText">Go to Sign In</p>
       </div>
     </li>
