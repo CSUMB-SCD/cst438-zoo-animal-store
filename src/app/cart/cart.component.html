@@ -13,17 +13,23 @@
               <td style="text-align: right;"><strong>Quantity:</strong></td>
               <td>{{ itemsInCart.get(item)[0] }}</td>
               <td width="10px"></td>
-              <td rowspan="2">
-                  <div class="button" style="width: 140px; float: right; margin-top: 10px;">
+              <td rowspan="2" style="padding-left:5px;">
+                  <div class="button" style="width: 140px; float: right; margin-top: 10px; ">
                       <p class="buttonText" style='-webkit-margin-top-collapse: discard;' (click)="remove(item)" routerLink="/cart">Remove</p>
                   </div>
               </td>
-              <td rowspan="3">
+              <td rowspan="3" style="padding-left:10px;">
+                <p><strong style="color:#1e7e34;">|OR|</strong></p>
+              </td>
+              <td rowspan="3" style="padding-left:13px;">
+                  <p><strong>Update Cart: </strong></p>
+              </td>
+              <td rowspan="4" style="padding-left:10px">
                 <input type="number" style="width: 70px; height: 26px; float: left;" name="quantity" min="1" max="{{item.instock}}" #count value=1>
               </td>
               
-              <td rowspan="4" style="padding-left:5em;">
-                <p style='-webkit-margin-top-collapse: discard;' id="adding" (click)="addToCart(item,count.value)">Update Cart</p>
+              <td rowspan="5">
+                <p style='-webkit-margin-top-collapse: discard;' style="width: 140px; float: right; margin-top: 10px; " class="button" (click)="addToCart(item,count.value)">Update</p>
               </td>
             </tr>
             <tr>
