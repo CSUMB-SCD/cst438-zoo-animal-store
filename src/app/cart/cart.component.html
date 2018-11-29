@@ -18,6 +18,13 @@
                       <p class="buttonText" style='-webkit-margin-top-collapse: discard;' (click)="remove(item)" routerLink="/cart">Remove</p>
                   </div>
               </td>
+              <td rowspan="3">
+                <input type="number" style="width: 70px; height: 26px; float: left;" name="quantity" min="1" max="{{item.instock}}" #count value=1>
+              </td>
+              
+              <td rowspan="4" style="padding-left:5em;">
+                <p style='-webkit-margin-top-collapse: discard;' id="adding" (click)="addToCart(item,count.value)">Update Cart</p>
+              </td>
             </tr>
             <tr>
               <td style="text-align: right;"><strong>Unit Cost:</strong></td>

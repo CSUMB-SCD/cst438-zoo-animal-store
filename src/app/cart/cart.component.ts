@@ -42,4 +42,9 @@ export class CartComponent implements OnInit {
     this.data.clearCart()
     this.data.changeMessage("No")
   }
+
+  addToCart(itemNumber, numberOfItem) {
+    this.data.addToCartService(itemNumber, numberOfItem)
+    document.getElementById("cartNotification").style.display = "block";
+  }
 }
