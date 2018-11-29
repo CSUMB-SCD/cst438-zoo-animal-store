@@ -1,6 +1,8 @@
 <div *ngIf="isLoggedIn == 'Yes'">
-  <h1 *ngIf="getGrandTotal() > 0">Your Shopping Cart</h1>
-  <h1 *ngIf="getGrandTotal() == 0">Your Cart Is Empty</h1>
+  <h1 *ngIf="getGrandTotal() > 0" style="text-align: center;">Your Shopping Cart</h1> <!-- Add frowny or cart -->
+  <h1 *ngIf="getGrandTotal() == 0" style="text-align: center;">Your Cart Is Empty</h1>
+  <br>
+  <br>
   <ul>
     <li *ngFor="let item of countArray">
       <ul>
@@ -56,6 +58,9 @@
   <div class="button" style="width: 350px" button #submit (click)="signOut()">
     <p class="buttonText">Sign Out</p>
   </div>
+  <br><br>
+  <hr>
+  <p id="logoSpot">Sponsored by PAV Co. &#169;</p>
 </div>
   
 <div *ngIf="isLoggedIn != 'Yes'">
@@ -67,4 +72,7 @@
       </div>
     </li>
   </ul>
+  <br><br>
+  <hr>
+  <p id="logoSpot">Sponsored by PAV Co. &#169;</p>
 </div>
