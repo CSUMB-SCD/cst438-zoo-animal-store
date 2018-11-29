@@ -1,9 +1,9 @@
 <div *ngIf="isLoggedIn == 'Yes'">
   <h1>Thanks For Your Order!</h1>
-  <div class="button" style="width: 220px;" routerLink="/items">
+  <div class="button" style="width: 320px;" routerLink="/items">
     <p class="buttonText">Return To Shop</p>
   </div>
-  <div class="button" style="width: 120px" button #submit (click)="signOut()">
+  <div class="button" style="width: 220px" button #submit (click)="signOut()">
     <p class="buttonText">Sign Out</p>
   </div>
 </div>
@@ -12,7 +12,7 @@
   <h1>Please Sign In To Shop</h1>
   <ul>
     <li>
-      <div class="button" style="width: 200px" routerLink="">
+      <div class="button" style="width: 300px" routerLink="">
         <p class="buttonText">Go to Sign In</p>
       </div>
     </li>
