@@ -5,41 +5,58 @@
       <table class="tbclass">
         <tr>
           <td style="padding-right: 30px;">
-            <p class="basicText">First Name:</p><input class="input" style="width: 300px;" type="text" #firstNname />
+            <p class="basicText">First Name:</p><input class="input" style="width: 300px;" type="text" #firstName onchange="this.style.border = '1px solid #ccc'"/>
           </td>
           <td>
-            <p class="basicText">Last Name:</p><input class="input" style="width: 300px;" type="text" #lastName />
+            <p class="basicText">Last Name:</p><input class="input" style="width: 300px;" type="text" #lastName onchange="this.style.border = '1px solid #ccc'"/>
           </td>
         </tr>
       </table>
-      <p class="basicText">Email Address:</p><input style="width: 631px;" class="input" type="text" #email />
-      <p class="basicText">Street Address:</p><input style="width: 631px;" class="input" type="text" #address />
+      <p class="basicText">Email Address:</p><input class="input" style="width: 631px;" type="text" #email onchange="this.style.border = '1px solid #ccc'"/>
+      <p class="basicText">Street Address:</p><input class="input" style="width: 631px;" type="text" #address onchange="this.style.border = '1px solid #ccc'"/>
       <table class="tbclass">
         <tr>
           <td style="padding-right: 30px;">
-            <p class="basicText">Card Number:</p><input class="input" style="width: 300px;" type="text" #cardNumber />
+            <p class="basicText">Card Number:</p><input class="input" style="width: 300px;" type="text" #cardNumber onchange="this.style.border = '1px solid #ccc'"/>
           </td>
           <td>
-            <p class="basicText">Security Code:</p><input class="input" style="width: 300px;" type="text" #securityCode />
+            <p class="basicText">Security Code:</p><input class="input" style="width: 300px;" type="text" #securityCode onchange="this.style.border = '1px solid #ccc'"/>
           </td>
         </tr>
       </table>
       <table class="tbclass">
           <tr>
             <td style="padding-right: 30px;">
-              <p class="basicText">Expiration Month:</p><input class="input"style="width: 300px;" type="number" min="1" max="12" #expirationMonth />
+              <p class="basicText">Expiration Month:</p><input class="input"style="width: 300px;" type="number" min="1" max="12" #expirationMonth onchange="this.style.border = '1px solid #ccc'"/>
             </td>
             <td>
-              <p class="basicText">Expiration Year:</p><input style="width: 300px;" class="input" type="number" min="2018" max="2050" #expirationYear />
+              <p class="basicText">Expiration Year:</p><input style="width: 300px;" class="input" type="number" min="2018" max="2050" #expirationYear onchange="this.style.border = '1px solid #ccc'"/>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2" style="text-align: center;">
+              <img src="../../../assets/gui/cards.png" style=" padding-top: 10px; width: 200px; text-align: center; margin-bottom: 0px;" />
             </td>
           </tr>
         </table>
+        <p id="errorText">Error: Fields in red are missing</p>
       </li>
   </ul>
-  <div class="button" style="width: 300px; background-color: #455232;" routerLink="/review">
+  <div 
+    class="button" 
+    style="width: 300px; background-color: #455232;" 
+    (click)="reviewClicked([
+      firstName.value,
+      lastName.value,
+      email.value,
+      address.value,
+      cardNumber.value,
+      securityCode.value,
+      expirationMonth.value,
+      expirationYear.value])">
     <p class="buttonText">Review Your Order</p>
   </div>
-  <div class="button" style="width: 300px" routerLink="/items">
+  <div class="button" style="width: 250px" routerLink="/items">
     <p class="buttonText">Back to Cart</p>
   </div>
   <br><br>

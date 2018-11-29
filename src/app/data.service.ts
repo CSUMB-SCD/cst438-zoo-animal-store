@@ -16,6 +16,10 @@ export class DataService {
     this.loginStatus.next(status)
   }
 
+  // functions for checkout information
+  checkoutInfo = []
+  username
+  
   // functions to return JSON
   //getUsers() { return this.http.get('../assets/users.json') }
   //getItems() { return this.http.get('../assets/items.json') }
