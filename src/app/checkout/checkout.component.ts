@@ -51,7 +51,7 @@ export class CheckoutComponent implements OnInit {
 
     for (var j = 0, len = values.length; j < len; j++) {
       if (values[j] == "") {
-        document.getElementsByTagName('input')[j].style.border = "3px solid red"
+        document.getElementsByTagName('input')[j].style.border = "1px solid red"
         errors = true
       }
     }

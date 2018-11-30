@@ -5,39 +5,28 @@
     <li *ngFor="let item of countArray">
       <ul>
         <li>
-          <table width="480px">
+          <table width="780px">
             <tr>
               <td style="text-align: right;"><strong>Name:</strong></td>
               <td>{{ item.name  }}</td>
-              <td width="10px"></td>
               <td style="text-align: right;"><strong>Quantity:</strong></td>
               <td>{{ itemsInCart.get(item)[0] }}</td>
-              <td width="10px"></td>
-              <td rowspan="2" style="padding-left:5px;">
-                  <div class="button" style="width: 140px; float: right; margin-top: 10px; ">
-                      <p class="buttonText" style='-webkit-margin-top-collapse: discard;' (click)="remove(item)" routerLink="/cart">Remove</p>
-                  </div>
-              </td>
-              <td rowspan="3" style="padding-left:10px;">
-                <p><strong style="color:#1e7e34;">|OR|</strong></p>
-              </td>
-              <td rowspan="3" style="padding-left:13px;">
-                  <p><strong>Update Cart: </strong></p>
-              </td>
-              <td rowspan="4" style="padding-left:10px">
-                <input type="number" style="width: 70px; height: 26px; float: left;" name="quantity" min="1" max="{{item.instock}}" #count value=1>
-              </td>
-              
-              <td rowspan="5">
-                <p style='-webkit-margin-top-collapse: discard;' style="width: 140px; float: right; margin-top: 10px; " class="button" (click)="addToCart(item,count.value)">Update</p>
+              <td style="float: right; padding-right: 10px;"><strong>Set New Quantity:</strong><br><input type="number" style="width: 90px; float:right; height: 26px; " name="quantity" min="1" max="{{item.instock}}" #count value=1></td>
+              <td>
+                <p style='-webkit-margin-top-collapse: discard;' style="width: 200px;" class="button" (click)="addToCart(item,count.value)">Update</p>
               </td>
             </tr>
+            <tr style="height: 10px;"></tr>
             <tr>
               <td style="text-align: right;"><strong>Unit Cost:</strong></td>
               <td>${{ item.price | number:"0.2" }}</td>
-              <td width="10px"></td>
               <td style="text-align: right;"><strong>Total Cost:</strong></td>
               <td>${{ item.price * itemsInCart.get(item)[0] | number:"0.2" }}</td>
+              <td colspan=2 style="float: center;">
+                  <div class="button" style="width: 300px; float: center; margin-top: 10px; background-color: red;">
+                      <p class="buttonText" style='-webkit-margin-top-collapse: discard;' (click)="remove(item)" routerLink="/cart">Remove</p>
+                  </div>
+              </td>
             </tr>
           </table>
         </li>
