@@ -11,7 +11,7 @@ export class CheckoutComponent implements OnInit {
   isLoggedIn
   itemsInCart
   countArray = []
-  overrideForm = true // Skip form, useful for testing
+  overrideForm = false // Skip form, useful for testing
 
   constructor(private route: ActivatedRoute, private data: DataService, private router: Router) { }
 
