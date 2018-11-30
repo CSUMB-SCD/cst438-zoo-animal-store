@@ -45,6 +45,5 @@ export class CartComponent implements OnInit {
 
   addToCart(itemNumber, numberOfItem) {
     this.data.addToCartService(itemNumber, numberOfItem)
-    document.getElementById("cartNotification").style.display = "block";
   }
 }

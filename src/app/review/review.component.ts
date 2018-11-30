@@ -11,20 +11,26 @@ export class ReviewComponent implements OnInit {
   isLoggedIn
   itemsInCart
   countArray = []
+  checkoutInfo = []
+  total
 
   constructor(private route: ActivatedRoute, private data: DataService) { }
 
   ngOnInit() {
-    this.data.currentStatus.subscribe(message => this.isLoggedIn = message);
-    this.itemsInCart = this.data.getCart();
-    this.countArray = Array.from(this.itemsInCart.keys());
+    window.scrollTo(0, 0)
+    this.data.currentStatus.subscribe(message => this.isLoggedIn = message)
+    this.itemsInCart = this.data.getCart()
+    this.countArray = Array.from(this.itemsInCart.keys())
+    this.checkoutInfo = this.data.checkoutInfo
+    this.total = this.getGrandTotal()
   }
 
   getGrandTotal() {
     var total = 0
-    this.itemsInCart.forEach((key, value) => {
-      total += value.price * key
+    this.itemsInCart.forEach((value, key) => {
+      total += key.price * value[0]
     });
+    this.data.grandTotal = total
     return total
   }
 
@@ -33,8 +39,4 @@ export class ReviewComponent implements OnInit {
     this.data.clearCart()
     this.data.changeMessage("No")
   }
-
-  buyNow() {
-    this.data.clearCart()
-  }
-} 
+}

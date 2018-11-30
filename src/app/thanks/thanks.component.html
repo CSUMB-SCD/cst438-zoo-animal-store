@@ -1,18 +1,52 @@
 <div *ngIf="isLoggedIn == 'Yes'">
-  <h1>Thanks For Your Order!</h1>
-  <div class="button" style="width: 320px;" routerLink="/items">
-    <p class="buttonText">Return To Shop</p>
+
+  <div *ngIf="purchaseIsValid">
+    <h1>Thanks For Your Order!</h1>
+    <div class="button" style="width: 320px;" routerLink="/items">
+      <p class="buttonText">Return To Shop</p>
+    </div>
+    <div class="button" style="width: 220px" button #submit (click)="signOut()">
+      <p class="buttonText">Sign Out</p>
+    </div>
   </div>
-  <div class="button" style="width: 220px" button #submit (click)="signOut()">
-    <p class="buttonText">Sign Out</p>
+
+  <div *ngIf="!purchaseIsValid">
+    <h1>Something Went Wrong!</h1>
+
+    <ul>
+      <li>
+        <table>
+          <tr *ngIf="notEnoughCredit" >
+            <td width="10px"></td>
+            <td style="text-align: right; color: red;"><strong>Error:</strong></td>
+            <td width="10px"></td>
+            <td>You don't have enough credits</td>
+          </tr>
+          <tr *ngFor="let error of itemsOverStock">
+              <td width="10px"></td>
+              <td style="text-align: right; color: red;"><strong>Error:</strong></td>
+              <td width="10px"></td>
+              <td>{{ error }}</td>
+            </tr>
+        </table>
+      </li>
+    </ul>
+
+    <div class="button" style="width: 300px; background-color: red;" routerLink="/cart">
+      <p class="buttonText">Go Back To Cart</p>
+    </div>
+    <div class="button" style="width: 220px" button #submit (click)="signOut()">
+      <p class="buttonText">Sign Out</p>
+    </div>
   </div>
+
 </div>
         
 <div *ngIf="isLoggedIn != 'Yes'">
   <h1>Please Sign In To Shop</h1>
   <ul>
     <li>
-      <div class="button" style="width: 300px" routerLink="">
+      <div class="button" style="width: 300px" routerLink="/login">
         <p class="buttonText">Go to Sign In</p>
       </div>
     </li>

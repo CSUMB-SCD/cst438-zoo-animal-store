@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
@@ -19,15 +19,28 @@ export class DataService {
   // functions for checkout information
   checkoutInfo = []
   username
-  
-  // functions to return JSON
-  //getUsers() { return this.http.get('../assets/users.json') }
-  //getItems() { return this.http.get('../assets/items.json') }
-  //getItem(itemNumber) { return this.http.get('../assets/items.json') }
+  credits
+  grandTotal
 
   getUsers() { return this.http.get('https://team12-zoo-shop-spring.herokuapp.com/users') }
   getItems() { return this.http.get('https://team12-zoo-shop-spring.herokuapp.com/') }
   getItem(itemNumber) { return this.http.get('https://team12-zoo-shop-spring.herokuapp.com/'+itemNumber) }
+
+  // functions to PUT
+  putQuantity(itemNumber, inStock) { 
+    const putHeader = new HttpHeaders().append('Content-Type' , 'application/json');
+    return this.http.put(
+      'https://team12-zoo-shop-spring.herokuapp.com/put/'+itemNumber+'/'+inStock, 
+      JSON.stringify({}), 
+      {headers: putHeader})
+  }
+  putCredit(username, credits) { 
+    const putHeader = new HttpHeaders().append('Content-Type' , 'application/json');
+    return this.http.put(
+      'https://team12-zoo-shop-spring.herokuapp.com/credit/'+username+'/'+credits, 
+      JSON.stringify({}), 
+      {headers: putHeader})
+  }
 
   // store cross page map for the shopping cart
   private itemsInCart = new Map<Object,[number, number]>()

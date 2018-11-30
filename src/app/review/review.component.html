@@ -1,9 +1,116 @@
 <div *ngIf="isLoggedIn == 'Yes'">
   <h1>Please Review Your Order</h1>
-  <div class="button" style="width: 350px; background-color: #455232;" (click)="buyNow()" routerLink="/thanks">
+  <ul>
+    <li *ngFor="let item of countArray">
+      <table width="480px">
+        <tr>
+          <td style="text-align: right;"><strong>Name:</strong></td>
+          <td>{{ item.name }}</td>
+          <td width="10px"></td>
+          <td style="text-align: right;"><strong>Quantity:</strong></td>
+          <td>{{ itemsInCart.get(item)[0] }}</td>
+        </tr>
+        <tr>
+          <td style="text-align: right;"><strong>Unit Cost:</strong></td>
+          <td>${{ item.price | number:"0.2" }}</td>
+          <td width="10px"></td>
+          <td style="text-align: right;"><strong>Total Cost:</strong></td>
+          <td>${{ item.price * itemsInCart.get(item)[0] | number:"0.2" }}</td>
+        </tr>
+      </table>
+    </li>
+
+    <li>
+        <table>
+            <tr>
+              <td width="10px"></td>
+              <td style="text-align: left;"><strong>Grand Total:</strong></td>
+              <td width="10px"></td>
+              <td>${{ total  | number:"0.2" }}</td>
+            </tr>
+        </table>
+    </li>
+
+    <li>
+      <table>
+        <tr>
+          <td colspan="2"><strong>Your Information:</strong></td>
+        </tr>
+        <tr style="text-align: left;">
+          <td>
+            <p class="basicText">First Name:</p>
+          </td>
+          <td>
+            <p class="basicText">{{ data.checkoutInfo[0] }}</p>
+          </td>
+        </tr>
+        <tr style="text-align: left;">
+          <td>
+            <p class="basicText">Last Name:</p>
+          </td>
+          <td>
+            <p class="basicText">{{ data.checkoutInfo[1] }}</p>
+          </td>
+        </tr>
+        <tr style="text-align: left;">
+          <td>
+            <p class="basicText">Email Address:</p>
+          </td>
+          <td>
+            <p class="basicText">{{ data.checkoutInfo[2] }}</p>
+          </td>
+        </tr>
+        <tr style="text-align: left;">
+          <td>
+            <p class="basicText">Street Address:</p>
+          </td>
+          <td>
+            <p class="basicText">{{ data.checkoutInfo[3] }}</p>
+          </td>
+        </tr>
+        <tr style="text-align: left;">
+          <td>
+            <p class="basicText">Card Number:</p>
+          </td>
+          <td>
+            <p class="basicText">{{ data.checkoutInfo[4] }}</p>
+          </td>
+        </tr>
+        <tr style="text-align: left;">
+          <td>
+            <p class="basicText">Security Code:</p>
+          </td>
+          <td>
+            <p class="basicText">{{ data.checkoutInfo[5] }}</p>
+          </td>
+        </tr>
+        <tr style="text-align: left;">
+          <td>
+            <p class="basicText">Expiration Month:</p>
+          </td>
+          <td>
+            <p class="basicText">{{ data.checkoutInfo[6] }}</p>
+          </td>
+        </tr>
+        <tr style="text-align: left;">
+          <td>
+            <p class="basicText">Expiration Year:</p>
+          </td>
+          <td>
+            <p class="basicText">{{ data.checkoutInfo[7] }}</p>
+          </td>
+        </tr>
+      </table>
+    </li>
+  </ul>
+
+  <div class="button" style="width: 200px; background-color: #455232;" routerLink="/thanks">
     <p class="buttonText">Buy Now!</p>
   </div>
-  <div class="button" style="width: 350px" button #submit (click)="signOut()">
+  <div class="button" style="width: 300px" button routerLink="/checkout">
+    <p class="buttonText">Back to Checkout</p>
+  </div>
+  <div class="button" style="width: 250px" button #submit (click)="signOut()">
     <p class="buttonText">Sign Out</p>
   </div>
   <br><br>
@@ -15,7 +122,7 @@
   <h1>Please Sign In To Shop</h1>
   <ul>
     <li>
-      <div class="button" style="width: 300px" routerLink="">
+      <div class="button" style="width: 300px" routerLink="/login">
         <p class="buttonText">Go to Sign In</p>
       </div>
     </li>
