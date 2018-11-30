@@ -21,7 +21,6 @@ export class DetailsComponent implements OnInit {
     this.data.getItem(this.item$).subscribe(
       data => this.item$ = data 
     )
-    document.getElementById("cartNotification").style.display = "none";
   }
 
   addToCart(itemNumber, numberOfItem) {

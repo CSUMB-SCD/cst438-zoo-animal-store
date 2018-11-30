@@ -25,7 +25,9 @@ export class LoginComponent implements OnInit {
     }
     while (i < size) {
       if (this.users$[i].username == username && this.users$[i].password == password) {
-        success = true;
+        success = true
+        this.data.credits = this.users$[i].credit
+        this.data.username = this.users$[i].username
       }
       i++;
     }
