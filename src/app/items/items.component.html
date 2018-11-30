@@ -1,32 +1,15 @@
 <div *ngIf="isLoggedIn == 'Yes'">
-  <!-- <h1>Items For Sale:</h1>
   <ul>
     <li *ngFor="let item of items$">
-      <ul>
-        <li>
-          <a class="basicText" routerLink="/details/{{item.id}}">{{ item.name }}</a>
-        </li>
-      </ul>
+      <table>
+        <tr>
+          <td rowspan="2">
+            <img src="../../../assets/animalImages/{{ item.image }}" style="width:40px; margin-left: auto; margin-right: auto; padding-right: 10px;" /> <a class="basicText" routerLink="/details/{{item.itemNumber}}">{{ item.name }}</a>
+          </td>
+        </tr>
+      </table>
     </li>
   </ul>
-  <div class="button" style="width: 120px" button #submit (click)="signOut()">
-    <p class="buttonText">Sign Out</p>
-  </div>
-
--->
-
-<ul>
-  <li *ngFor="let item of items$">
-    <table>
-      <tr>
-        <td rowspan="2">
-          <img src="../../../assets/animalImages/{{ item.image }}" style="width:40px; margin-left: auto; margin-right: auto; padding-right: 10px;" /> <a class="basicText" routerLink="/details/{{item.itemNumber}}">{{ item.name }}</a>
-        </td>
-      </tr>
-      <tr>
-    </table>
-  </li>
-</ul>
 
 <br>
 
@@ -39,7 +22,7 @@
   <h1>Please Sign In to Browse</h1>
   <ul>
       <li>
-          <div class="button" style="width: 200px" routerLink="">
+          <div class="button" style="width: 200px" routerLink="/login">
               <p class="buttonText">Go to Sign In</p>
             </div>
       </li>
