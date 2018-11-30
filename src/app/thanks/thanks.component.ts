@@ -48,11 +48,8 @@ export class ThanksComponent implements OnInit {
 
       if (this.purchaseIsValid) {
         this.data.clearCart()
-        // update db here
-        console.log(itemNumber, quantityInStock-quantityWanted)
         this.data.putQuantity(itemNumber, quantityInStock-quantityWanted).subscribe()
         this.data.putCredit(this.data.username, this.data.credits-this.data.grandTotal).subscribe()
-        console.log(this.data.username, this.data.credits-this.data.grandTotal)
       }
     }
   }
