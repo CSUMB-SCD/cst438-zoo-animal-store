@@ -1,5 +1,41 @@
 <div *ngIf="isLoggedIn == 'Yes'">
   <h1 align = "center">Please Review Your Order</h1>
+  <ul>
+    <li>
+      <table class="tbclass">
+        <tr>
+          <td style="padding-right: 30px;">
+            <p class="basicText">Confirmation Number:</p>
+          </td>
+          <td>
+            <p class="basicText">Last Name:</p><input class="input" style="width: 300px;" type="text" #lastName onchange="this.style.border = '1px solid #ccc'"/>
+          </td>
+        </tr>
+      </table>
+      <p class="basicText">Email Address:</p><input class="input" style="width: 631px;" type="text" #email onchange="this.style.border = '1px solid #ccc'"/>
+      <p class="basicText">Street Address:</p><input class="input" style="width: 631px;" type="text" #address onchange="this.style.border = '1px solid #ccc'"/>
+      <table class="tbclass">
+        <tr>
+          <td style="padding-right: 30px;">
+            <p class="basicText">Card Number:</p><input class="input" style="width: 300px;" type="text" #cardNumber onchange="this.style.border = '1px solid #ccc'"/>
+          </td>
+          <td>
+            <p class="basicText">Security Code:</p><input class="input" style="width: 300px;" type="text" #securityCode onchange="this.style.border = '1px solid #ccc'"/>
+          </td>
+        </tr>
+      </table>
+
+
+
+
+
+
+
+
+
+
+
+
   <div class="button" style="width: 350px; background-color: #455232;" (click)="buyNow()" routerLink="/thanks">
     <p class="buttonText">Buy Now!</p>
   </div>
