@@ -6,6 +6,13 @@
           <td rowspan="2">
             <img src="../../../assets/animalImages/{{ item.image }}" style="width:40px; margin-left: auto; margin-right: auto; padding-right: 10px;" /> <a class="basicText" routerLink="/details/{{item.itemNumber}}">{{ item.name }} | {{ item.price }} | {{ item.instock }}</a>
           </td>
+          <td rowspan="4" style="padding-left:10px">
+            <input type="number" style="width: 70px; height: 26px; float: left;" name="quantity" min="1" max="{{item.instock}}" #count value=1>
+          </td>
+          
+          <td rowspan="10">
+            <p style='-webkit-margin-top-collapse: discard;' style="width: 140px; float: right; margin-top: 10px; " class="button" (click)="addToCart(item,count.value)">Add to Cart</p>
+          </td>
         </tr>
       </table>
     </li>

@@ -23,4 +23,7 @@ export class ItemsComponent implements OnInit {
     this.data.changeMessage("No")
   }
 
+  addToCart(itemNumber, numberOfItem) {
+    this.data.addToCartService(itemNumber, numberOfItem)
+  }
 }
