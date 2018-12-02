@@ -15,7 +15,7 @@
           </td>
           
           <td rowspan="5">
-            <p style='-webkit-margin-top-collapse: discard;' style="width: 140px; float: right; margin-top: 10px; " class="button" (click)="addToCart(item,count.value)">Buy</p>
+            <button style='-webkit-margin-top-collapse: discard;' style="width: 140px; float: right; margin-top: 10px; " class="button" (click)="addToCart(item,count.value)">Buy</button>
           </td>
         </tr>
       </table>
@@ -24,6 +24,9 @@
   </ul>
 
 <br>
+<div>
+  <button class="button" style="width: 800px" routerLink="/cart"> View Items in Cart </button>
+</div>
 
 <br><br>
 <hr>
