@@ -24,9 +24,15 @@
         <table>
             <tr>
               <td width="10px"></td>
-              <td style="text-align: left;"><strong>Grand Total:</strong></td>
+              <td style="text-align: left;"><strong>Tax: </strong></td>
+              <td> ${{ getTotal() | number:"0.2"}} </td>
               <td width="10px"></td>
-              <td>${{ total  | number:"0.2" }}</td>
+              <td style="text-align: left;"><strong> Tax: </strong></td>
+              <td>${{ getTax() | number:"0.2"}}</td>
+              <td width="10px"></td>
+              <td style="text-align: left;"><strong> Grand Total: </strong></td>
+              <td width="10px"></td>
+              <td> ${{ total  | number:"0.2" }} </td>
             </tr>
         </table>
     </li>
