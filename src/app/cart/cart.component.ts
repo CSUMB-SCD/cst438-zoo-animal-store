@@ -24,13 +24,28 @@ export class CartComponent implements OnInit {
     this.countArray = Array.from(this.itemsInCart.keys())
   }
 
-  getGrandTotal() {
+
+  getTotal() {
     var total = 0
     this.itemsInCart.forEach((value, key) => {
       total += key.price * value[0]
     });
     return total
   }
+
+  getTax(){
+    var total = this.getTotal()
+    var tax = total * 0.09
+    return tax
+  }
+
+  getGrandTotal(){
+    var total = this.getTotal()
+    var tax = this.getTax()
+    var nT = total + tax
+    return nT.toFixed(2)
+  }
+
 
   remove(itemToRemove) {
     this.data.removeItemFromCart(itemToRemove)

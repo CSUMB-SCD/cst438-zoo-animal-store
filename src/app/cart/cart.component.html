@@ -33,7 +33,12 @@
       </ul>
     </li>
     <li *ngIf="getGrandTotal() > 0">
-        <strong>Grand Total: </strong>${{ getGrandTotal() | number:"0.2"}}
+        <strong>Total: </strong>${{ getTotal() | number:"0.2"}}
+        <br>
+        <strong>Tax: </strong> ${{ getTax() | number:"0.2"}}
+        <br>
+        <strong>Grand Total: </strong> ${{ getGrandTotal() | number:"0.2"}}
+        
     </li>
   </ul>
   <div *ngIf="getGrandTotal() > 0" class="button" style="width: 400px; background-color: #455232;" routerLink="/checkout">
