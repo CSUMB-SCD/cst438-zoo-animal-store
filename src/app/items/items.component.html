@@ -4,7 +4,7 @@
       <table>
         <tr colspan="1">
           <td rowspan="2">
-            <img src="../../../assets/animalImages/{{ item.image }}" style="width:40px; margin-left: auto; margin-right: auto; padding-right: 10px;" /> <a class="basicText" routerLink="/details/{{item.itemNumber}}">{{ item.name }}</a>
+            <img src="../../../assets/animalImages/{{ item.image }}"  routerLink="/details/{{item.itemNumber}}" style="width:40px; margin-left: auto; margin-right: auto; padding-right: 10px;" /> <a class="basicText" routerLink="/details/{{item.itemNumber}}">{{ item.name }}</a>
             <p style="font-size:18px; padding-left:2.1em">Price: ${{ item.price | number: ".2"}} | Stock: {{ item.instock }}</p>
           </td>
           <td rowspan="3" style="padding-left:15em;">
