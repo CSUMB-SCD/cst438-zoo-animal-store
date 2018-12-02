@@ -4,14 +4,18 @@
       <table>
         <tr>
           <td rowspan="2">
-            <img src="../../../assets/animalImages/{{ item.image }}" style="width:40px; margin-left: auto; margin-right: auto; padding-right: 10px;" /> <a class="basicText" routerLink="/details/{{item.itemNumber}}">{{ item.name }} | Price: {{ item.price }} | Stock: {{ item.instock }}</a>
+            <img src="../../../assets/animalImages/{{ item.image }}" style="width:40px; margin-left: auto; margin-right: auto; padding-right: 10px;" /> <a class="basicText" routerLink="/details/{{item.itemNumber}}">{{ item.name }}</a>
+            <p style="font-size:18px; padding-left:2.1em">Price: ${{ item.price | number: ".2"}} | Stock: {{ item.instock }}</p>
           </td>
-          <td rowspan="4" style="padding-left:10px">
+          <td rowspan="3" style="padding-left:15em;">
+            <p style="font-size:18px; padding-top: 10px;">Quantity:</p>
+          </td>
+          <td rowspan="4" style="padding-left: 5px;">
             <input type="number" style="width: 70px; height: 26px; float: left;" name="quantity" min="1" max="{{item.instock}}" #count value=1>
           </td>
           
-          <td rowspan="10">
-            <p align = "right" style='-webkit-margin-top-collapse: discard;' style="width: 140px; float: right; margin-top: 10px; " class="button" (click)="addToCart(item,count.value)">Add to Cart</p>
+          <td rowspan="5">
+            <p style='-webkit-margin-top-collapse: discard;' style="width: 140px; float: right; margin-top: 10px; " class="button" (click)="addToCart(item,count.value)">Buy</p>
           </td>
         </tr>
       </table>
