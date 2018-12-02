@@ -2,7 +2,7 @@
   <ul>
     <li *ngFor="let item of items$">
       <table>
-        <tr>
+        <tr colspan="1">
           <td rowspan="2">
             <img src="../../../assets/animalImages/{{ item.image }}" style="width:40px; margin-left: auto; margin-right: auto; padding-right: 10px;" /> <a class="basicText" routerLink="/details/{{item.itemNumber}}">{{ item.name }}</a>
             <p style="font-size:18px; padding-left:2.1em">Price: ${{ item.price | number: ".2"}} | Stock: {{ item.instock }}</p>
@@ -19,6 +19,7 @@
           </td>
         </tr>
       </table>
+      <p id="cartNotification_{{item.itemNumber}}" style="text-align: center;">Your Cart Was Updated</p>
     </li>
   </ul>
 
