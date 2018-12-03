@@ -24,7 +24,6 @@ export class CartComponent implements OnInit {
     this.countArray = Array.from(this.itemsInCart.keys())
   }
 
-
   getTotal() {
     var total = 0
     this.itemsInCart.forEach((value, key) => {
@@ -43,9 +42,9 @@ export class CartComponent implements OnInit {
     var total = this.getTotal()
     var tax = this.getTax()
     var nT = total + tax
+    this.data.grandTotal = nT.toFixed(2)
     return nT.toFixed(2)
   }
-
 
   remove(itemToRemove) {
     this.data.removeItemFromCart(itemToRemove)
