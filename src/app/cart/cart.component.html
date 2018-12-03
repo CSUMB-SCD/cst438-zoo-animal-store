@@ -13,7 +13,7 @@
               <td>{{ itemsInCart.get(item)[0] }}</td>
               <td style="float: right; padding-right: 10px;"><strong>Set New Quantity:</strong><br><input type="number" style="width: 90px; float:right; height: 26px; " name="quantity" min="1" max="{{item.instock}}" #count value=1></td>
               <td>
-                <p style='-webkit-margin-top-collapse: discard;' style="width: 200px;" class="button" (click)="addToCart(item,count.value)">Update</p>
+                <button style='-webkit-margin-top-collapse: discard;' style="width: 200px;" class="button" (click)="addToCart(item,count.value)">Update</button>
               </td>
             </tr>
             <tr style="height: 10px;"></tr>
@@ -23,8 +23,8 @@
               <td style="text-align: right;"><strong>Total Cost:</strong></td>
               <td>${{ item.price * itemsInCart.get(item)[0] | number:"0.2" }}</td>
               <td colspan=2 style="float: center;">
-                  <div class="button" style="width: 300px; float: center; margin-top: 10px; background-color: red;">
-                      <p class="buttonText" style='-webkit-margin-top-collapse: discard;' (click)="remove(item)" routerLink="/cart">Remove</p>
+                  <div>
+                      <button class="buttonText" style='-webkit-margin-top-collapse: discard;' style="width: 300px; float: center; margin-top: 10px; background-color: red; color: white; font-size: 24px;" (click)="remove(item)" routerLink="/cart">Remove</button>
                   </div>
               </td>
             </tr>
@@ -41,14 +41,14 @@
         
     </li>
   </ul>
-  <div *ngIf="getGrandTotal() > 0" class="button" style="width: 400px; background-color: #455232;" routerLink="/checkout">
-    <p class="buttonText">Check Out!</p>
+  <div >
+    <button *ngIf="getGrandTotal() > 0" class="button" style="width: 400px; background-color: #455232;" routerLink="/checkout">Check Out!</button>
   </div>
-  <div class="button" style="width: 400px" routerLink="/items">
-    <p class="buttonText">Back to All Items</p>
+  <div>
+    <button class="button" style="width: 400px" routerLink="/items">Back to All Items</button>
   </div>
-  <div class="button" style="width: 350px" button #submit (click)="signOut()">
-    <p class="buttonText">Sign Out</p>
+  <div>
+    <button class="button" style="width: 350px" button #submit (click)="signOut()">Sign Out</button>
   </div>
   <br><br>
   <hr>

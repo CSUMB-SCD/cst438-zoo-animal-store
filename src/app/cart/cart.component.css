@@ -22,3 +22,10 @@
     text-align: center;
 }
 
+#rem{
+    width: 300px; 
+    float: center; 
+    margin-top: 10px; 
+    background-color: red;
+}
+
