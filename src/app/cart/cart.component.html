@@ -41,13 +41,13 @@
         
     </li>
   </ul>
-  <div >
-    <button *ngIf="getGrandTotal() > 0" class="button" style="width: 400px; background-color: #455232;" routerLink="/checkout">Check Out!</button>
+  <div class="cent">
+    <button *ngIf="getGrandTotal() > 0" class="button" style="width: 350px; background-color: #455232;" routerLink="/checkout">Check Out!</button>
   </div>
-  <div>
-    <button class="button" style="width: 400px" routerLink="/items">Back to All Items</button>
+  <div class="cent">
+    <button class="button" style="width: 350px" routerLink="/items">Back to All Items</button>
   </div>
-  <div>
+  <div class="cent"> 
     <button class="button" style="width: 350px" button #submit (click)="signOut()">Sign Out</button>
   </div>
   <br><br>
@@ -59,8 +59,8 @@
   <h1>Sign In To View Your Cart</h1>
   <ul>
     <li>
-      <div class="button" style="width: 200px" routerLink="/login">
-         <p class="buttonText">Go to Sign In</p>
+      <div class="cent">
+        <button class="button" style="width: 200px" routerLink="/login">Go to Sign In</button>
       </div>
     </li>
   </ul>
