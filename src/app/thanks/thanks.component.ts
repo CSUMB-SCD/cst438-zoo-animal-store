@@ -14,6 +14,7 @@ export class ThanksComponent implements OnInit {
   purchaseIsValid = false
   notEnoughCredit = false
   itemsOverStock = []
+  randomstring = ""
 
   constructor(private route: ActivatedRoute, private data: DataService) {}
 
@@ -52,7 +53,17 @@ export class ThanksComponent implements OnInit {
         this.data.putCredit(this.data.username, this.data.credits-this.data.grandTotal).subscribe()
       }
     }
-  }
+
+
+    var chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZ";
+    var string_length = 8;
+    this.randomstring = '';
+    for (var i=0; i<string_length; i++) {
+      var rnum = Math.floor(Math.random() * chars.length);
+      this.randomstring += chars.substring(rnum,rnum+1);
+      console.log("THIS WORKS")
+    }
+}
 
   getGrandTotal() {
     var total = 0
