@@ -1,0 +1,79 @@
+<div *ngIf="isLoggedIn == 'Yes'">
+  <h1>Please Enter Checkout Info</h1>
+  <ul>
+    <li>
+      <table class="tbclass">
+        <tr>
+          <td style="padding-right: 30px;">
+            <p class="basicText">First Name:</p><input class="input" style="width: 300px;" type="text" #firstName onchange="this.style.border = '1px solid #ccc'"/>
+          </td>
+          <td>
+            <p class="basicText">Last Name:</p><input class="input" style="width: 300px;" type="text" #lastName onchange="this.style.border = '1px solid #ccc'"/>
+          </td>
+        </tr>
+      </table>
+      <p class="basicText">Email Address:</p><input class="input" style="width: 631px;" type="text" #email onchange="this.style.border = '1px solid #ccc'"/>
+      <p class="basicText">Street Address:</p><input class="input" style="width: 631px;" type="text" #address onchange="this.style.border = '1px solid #ccc'"/>
+      <table class="tbclass">
+        <tr>
+          <td style="padding-right: 30px;">
+            <p class="basicText">Card Number:</p><input class="input" style="width: 300px;" type="text" #cardNumber onchange="this.style.border = '1px solid #ccc'"/>
+          </td>
+          <td>
+            <p class="basicText">Security Code:</p><input class="input" style="width: 300px;" type="text" #securityCode onchange="this.style.border = '1px solid #ccc'"/>
+          </td>
+        </tr>
+      </table>
+      <table class="tbclass">
+          <tr>
+            <td style="padding-right: 30px;">
+              <p class="basicText">Expiration Month:</p><input class="input"style="width: 300px;" type="number" min="1" max="12" #expirationMonth onchange="this.style.border = '1px solid #ccc'"/>
+            </td>
+            <td>
+              <p class="basicText">Expiration Year:</p><input style="width: 300px;" class="input" type="number" min="2018" max="2050" #expirationYear onchange="this.style.border = '1px solid #ccc'"/>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2" style="text-align: center;">
+              <img src="../../../assets/gui/cards.png" style=" padding-top: 10px; width: 200px; text-align: center; margin-bottom: 0px;" />
+            </td>
+          </tr>
+        </table>
+        <p id="errorText">Error: Fields in red are missing</p>
+      </li>
+  </ul>
+  <div class="cent">
+    <button
+    class="button" 
+    style="width: 300px; background-color: #455232;" 
+    (click)="reviewClicked([
+      firstName.value,
+      lastName.value,
+      email.value,
+      address.value,
+      cardNumber.value,
+      securityCode.value,
+      expirationMonth.value,
+      expirationYear.value])">Review Your Order</button>
+  </div>
+  <div class="cent">
+    <button class="button" style="width: 250px" routerLink="/items">Back to Cart</button>
+  </div>
+  <br><br>
+  <hr>
+  <p id="logoSpot">Sponsored by PAV Co. &#169;</p>
+</div>
+    
+<div *ngIf="isLoggedIn != 'Yes'">
+  <h1>Please Sign In To Shop</h1>
+  <ul>
+    <li>
+      <div class="cent">
+        <button class="button" style="width: 200px" routerLink="/login">Go to Sign In</button>
+      </div>
+    </li>
+  </ul>
+  <br><br>
+  <hr>
+  <p id="logoSpot">Sponsored by PAV Co. &#169;</p>
+</div>

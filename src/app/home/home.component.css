@@ -1,0 +1,19 @@
+#title1{
+    background-image: url("/assets/carouselImages/titlepicture.png");
+    width: 800px;
+    height: 150px;
+    border-radius: 15px;
+}
+
+#caro{
+    border-radius: 5px;
+}
+
+h3{
+    background-color: black;
+}
+
+.flare{
+    text-align: center;
+}
+

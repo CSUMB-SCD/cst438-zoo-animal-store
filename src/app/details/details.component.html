@@ -1,0 +1,62 @@
+<div *ngIf="isLoggedIn == 'Yes'">
+    <h1>{{ item$.name }}</h1>
+    <ul>
+      <li>
+        <table>
+          <tr>
+            <td rowspan="2">
+              <img src="../../../assets/animalImages/{{ item$.image || 'loading.png'}}" style="width:150px; margin-left: auto; margin-right: auto; padding-right: 10px;" />
+            </td>
+            <td>
+              <strong>Description: </strong>{{ item$.description }}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input class="input" style="width: 70px; height: 26px; float: left;" type="number" min="1" max="{{item$.instock}}"
+                #count value=1 />
+              <div style="text-align:right" style="float: right; padding-right: 10px;" >
+                <button id="adding" style='-webkit-margin-top-collapse: discard;' (click)="addToCart(item$,count.value)">Add to Cart</button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <p id="cartNotification">Your Cart Was Updated</p>
+            </td>
+          </tr>
+        </table>
+      </li>
+      <li><strong style="padding-left: 10px;">Price: </strong> ${{ item$.price | number:"0.2" }}</li>
+      <li><strong style="padding-left: 10px;">Units in Stock: </strong> {{ item$.instock }}</li>
+    </ul>
+  
+    <div class="cent">
+      <button class="button" style="width: 300px" routerLink="/cart">Go To Cart</button>
+    </div>
+  
+    <div class="cent">
+      <button id="items" style="width:300px; border-radius: 8px" routerLink="/items">Items List</button>
+    </div>
+  
+    <div class="cent">
+      <button class="button" style="width: 300px" button #submit (click)="signOut()">Sign Out</button>
+    </div>
+    <br><br>
+    <hr>
+    <p id="logoSpot">Sponsored by PAV Co. &#169;</p>
+  </div>
+  
+  <div *ngIf="isLoggedIn != 'Yes'">
+    <h1>Please Sign In To Shop</h1>
+    <ul>
+      <li>
+        <div class="cent">
+          <button class="button" style="width: 200px" routerLink="/login">Go to Sign In</button>
+        </div>
+      </li>
+    </ul>
+    <br><br>
+    <hr>
+    <p id="logoSpot">Sponsored by PAV Co. &#169;</p>
+  </div>

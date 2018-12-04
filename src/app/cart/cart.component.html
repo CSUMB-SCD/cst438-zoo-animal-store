@@ -1,0 +1,70 @@
+<div *ngIf="isLoggedIn == 'Yes'">
+  <h1 *ngIf="getGrandTotal() > 0" style="text-align: center;">Your Shopping Cart</h1> 
+  <h1 *ngIf="getGrandTotal() == 0" style="text-align: center;">Your Cart Is Empty</h1>
+  <ul>
+    <li *ngFor="let item of countArray">
+      <ul>
+        <li>
+          <table width="780px">
+            <tr>
+              <td style="text-align: right;"><strong>Name:</strong></td>
+              <td>{{ item.name  }}</td>
+              <td style="text-align: right;"><strong>Quantity:</strong></td>
+              <td>{{ itemsInCart.get(item)[0] }}</td>
+              <td style="float: right; padding-right: 10px;"><strong>Set New Quantity:</strong><br><input type="number" style="width: 90px; float:right; height: 26px; " name="quantity" min="1" max="{{item.instock}}" #count value=1></td>
+              <td>
+                <button style='-webkit-margin-top-collapse: discard;' style="width: 200px;" class="button" (click)="addToCart(item,count.value)">Update</button>
+              </td>
+            </tr>
+            <tr style="height: 10px;"></tr>
+            <tr>
+              <td style="text-align: right;"><strong>Unit Cost:</strong></td>
+              <td>${{ item.price | number:"0.2" }}</td>
+              <td style="text-align: right;"><strong>Total Cost:</strong></td>
+              <td>${{ item.price * itemsInCart.get(item)[0] | number:"0.2" }}</td>
+              <td colspan=2 style="float: center;">
+                  <div>
+                      <button class="buttonText" style='-webkit-margin-top-collapse: discard;' style="width: 300px; float: right; margin-top: 10px; background-color: red; color: white; font-size: 24px; padding-left: 10px; padding-right: 15px; border-radius: 8px" (click)="remove(item)" routerLink="/cart">Remove</button>
+                  </div>
+              </td>
+            </tr>
+          </table>
+        </li>
+      </ul>
+    </li>
+    <li *ngIf="getGrandTotal() > 0">
+        <strong>Total: </strong>${{ getTotal() | number:"0.2"}}
+        <br>
+        <strong>Tax: </strong> ${{ getTax() | number:"0.2"}}
+        <br>
+        <strong>Grand Total: </strong> ${{ getGrandTotal() | number:"0.2"}}
+        
+    </li>
+  </ul>
+  <div class="cent">
+    <button *ngIf="getGrandTotal() > 0" class="button" style="width: 350px; background-color: #455232;" routerLink="/checkout">Check Out!</button>
+  </div>
+  <div class="cent">
+    <button class="button" style="width: 350px" routerLink="/items">Back to All Items</button>
+  </div>
+  <div class="cent"> 
+    <button class="button" style="width: 350px" button #submit (click)="signOut()">Sign Out</button>
+  </div>
+  <br><br>
+  <hr>
+  <p id="logoSpot">Sponsored by PAV Co. &#169;</p>
+</div>
+  
+<div *ngIf="isLoggedIn != 'Yes'">
+  <h1>Sign In To View Your Cart</h1>
+  <ul>
+    <li>
+      <div class="cent">
+        <button class="button" style="width: 200px" routerLink="/login">Go to Sign In</button>
+      </div>
+    </li>
+  </ul>
+  <br><br>
+  <hr>
+  <p id="logoSpot">Sponsored by PAV Co. &#169;</p>
+</div>

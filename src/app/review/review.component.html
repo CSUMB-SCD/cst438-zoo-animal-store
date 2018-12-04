@@ -1,0 +1,139 @@
+<div *ngIf="isLoggedIn == 'Yes'">
+  <h1>Please Review Your Order</h1>
+  <ul>
+    <li *ngFor="let item of countArray">
+      <table width="480px">
+        <tr>
+          <td style="text-align: right;"><strong>Name:</strong></td>
+          <td>{{ item.name }}</td>
+          <td width="10px"></td>
+          <td style="text-align: right;"><strong>Quantity:</strong></td>
+          <td>{{ itemsInCart.get(item)[0] }}</td>
+        </tr>
+        <tr>
+          <td style="text-align: right;"><strong>Unit Cost:</strong></td>
+          <td>${{ item.price | number:"0.2" }}</td>
+          <td width="10px"></td>
+          <td style="text-align: right;"><strong>Total Cost:</strong></td>
+          <td>${{ item.price * itemsInCart.get(item)[0] | number:"0.2" }}</td>
+        </tr>
+      </table>
+    </li>
+
+    <li>
+        <table>
+            <tr>
+              <td width="10px"></td>
+              <td style="text-align: left;"><strong>Tax: </strong></td>
+              <td> ${{ getTotal() | number:"0.2"}} </td>
+              <td width="10px"></td>
+              <td style="text-align: left;"><strong> Tax: </strong></td>
+              <td>${{ getTax() | number:"0.2"}}</td>
+              <td width="10px"></td>
+              <td style="text-align: left;"><strong> Grand Total: </strong></td>
+              <td width="10px"></td>
+              <td> ${{ total  | number:"0.2" }} </td>
+            </tr>
+        </table>
+    </li>
+
+    <li>
+      <table>
+        <tr>
+          <td colspan="2"><strong>Your Information:</strong></td>
+        </tr>
+        <tr style="text-align: left;">
+          <td>
+            <p class="basicText">First Name:</p>
+          </td>
+          <td>
+            <p class="basicText">{{ data.checkoutInfo[0] }}</p>
+          </td>
+        </tr>
+        <tr style="text-align: left;">
+          <td>
+            <p class="basicText">Last Name:</p>
+          </td>
+          <td>
+            <p class="basicText">{{ data.checkoutInfo[1] }}</p>
+          </td>
+        </tr>
+        <tr style="text-align: left;">
+          <td>
+            <p class="basicText">Email Address:</p>
+          </td>
+          <td>
+            <p class="basicText">{{ data.checkoutInfo[2] }}</p>
+          </td>
+        </tr>
+        <tr style="text-align: left;">
+          <td>
+            <p class="basicText">Street Address:</p>
+          </td>
+          <td>
+            <p class="basicText">{{ data.checkoutInfo[3] }}</p>
+          </td>
+        </tr>
+        <tr style="text-align: left;">
+          <td>
+            <p class="basicText">Card Number:</p>
+          </td>
+          <td>
+            <p class="basicText">{{ data.checkoutInfo[4] }}</p>
+          </td>
+        </tr>
+        <tr style="text-align: left;">
+          <td>
+            <p class="basicText">Security Code:</p>
+          </td>
+          <td>
+            <p class="basicText">{{ data.checkoutInfo[5] }}</p>
+          </td>
+        </tr>
+        <tr style="text-align: left;">
+          <td>
+            <p class="basicText">Expiration Month:</p>
+          </td>
+          <td>
+            <p class="basicText">{{ data.checkoutInfo[6] }}</p>
+          </td>
+        </tr>
+        <tr style="text-align: left;">
+          <td>
+            <p class="basicText">Expiration Year:</p>
+          </td>
+          <td>
+            <p class="basicText">{{ data.checkoutInfo[7] }}</p>
+          </td>
+        </tr>
+      </table>
+    </li>
+  </ul>
+
+  <div class="cent">
+    <button class="button" style="width: 250px; background-color: #455232;" routerLink="/thanks">Buy Now!</button>
+  </div>
+  <div class="cent">
+    <button class="button" style="width: 300px" button routerLink="/checkout">Back to Checkout</button>
+  </div>
+  <div class="cent">
+    <button class="button" style="width: 250px" button #submit (click)="signOut()">Sign Out</button>
+  </div>
+  <br><br>
+  <hr>
+  <p id="logoSpot">Sponsored by PAV Co. &#169;</p>
+</div>
+      
+<div *ngIf="isLoggedIn != 'Yes'">
+  <h1>Please Sign In To Shop</h1>
+  <ul>
+    <li>
+      <div class="cent">
+        <button class = "button" style="width: 300px" routerLink="/login"> Go to Sign In </button>
+    </div>
+    </li>
+  </ul>
+  <br><br>
+  <hr>
+  <p id="logoSpot">Sponsored by PAV Co. &#169;</p>
+</div>

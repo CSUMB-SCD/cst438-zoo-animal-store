@@ -1,0 +1,110 @@
+/* You can add global styles to this file, and also import other style files */
+
+.input {
+    width: 650px;
+    font-size: 24px;
+    text-align: center;
+    margin: auto;
+    display: block;
+}
+
+.basicText {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size:25px;
+    margin-bottom: 0px;
+    margin-top: 10px;
+}
+#errorText {
+    color: red; 
+    font-weight: bold; 
+    display: none; 
+    margin-left: auto; 
+    margin-right: auto; 
+    text-align: center;
+}
+
+.cent{
+    text-align: center;
+}
+
+.button {
+    height: 38px;
+    background-color: #93C545;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 10px;
+    margin-top:5px;
+    font-size: 24px;
+    width: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    border-radius: 12px;
+}
+
+.menulink {
+    color: white;
+    font-size: 12px;
+    text-decoration: none;
+    text-align: center;
+}
+body {
+    margin: 0;
+    background: #F2F2F2;
+    font-family: 'Montserrat', sans-serif;
+    height: 100vh;
+}
+
+#container {
+   display: grid;
+   grid-template-columns: 70px auto;
+   height: 100%;
+
+   #content {
+       width: 800px;
+       margin-left: auto;
+       margin-right: auto;
+
+       ul {
+           list-style-type: none;
+           margin:0;padding:0;
+       
+           li {
+               background: #fff;
+               border-radius: 8px;
+               padding: 5px;
+               padding-bottom: 10px;
+               margin-bottom: 8px;
+       
+               a {
+                   font-size: 1.5em;
+                   text-decoration: none;
+                   font-weight: bold;
+                   color: black;
+               }
+       
+               ul {
+                   margin-top: 20px;
+                   
+                   li {
+                       padding:0;
+       
+                       a {
+                           font-size: 1em;
+                           font-weight: 300;
+                       }
+                   }
+               }
+           }
+       }
+   }
+}
+
+
+#logoSpot{
+    size: 5px;
+    text-align:center;
+}

@@ -1,0 +1,50 @@
+<div *ngIf="isLoggedIn == 'Yes'">
+  <ul>
+    <li *ngFor="let item of items$">
+      <table>
+        <tr colspan="1">
+          <td rowspan="2">
+            <img src="../../../assets/animalImages/{{ item.image }}"  routerLink="/details/{{item.itemNumber}}" style="width:40px; margin-left: auto; margin-right: auto; padding-right: 10px;" /> <a class="basicText" routerLink="/details/{{item.itemNumber}}">{{ item.name }}</a>
+            <p style="font-size:18px; padding-left:2.1em">Price: ${{ item.price | number: ".2"}} | Stock: {{ item.instock }}</p>
+          </td>
+          <td rowspan="3" style="padding-left:15em;">
+            <p style="font-size:18px; padding-top: 10px;">Quantity:</p>
+          </td>
+          <td rowspan="4" style="padding-left: 5px;">
+            <input type="number" style="width: 70px; height: 26px; float: left;" name="quantity" min="1" max="{{item.instock}}" #count value=1>
+          </td>
+          
+          <td rowspan="5">
+            <button style='-webkit-margin-top-collapse: discard;' style="width: 140px; float: right; margin-top: 10px; font-size: 16px;" class="button" (click)="addToCart(item,count.value)">Add to Cart</button>
+          </td>
+        </tr>
+      </table>
+      <p id="cartNotification_{{item.itemNumber}}" style="text-align: center;">Your Cart Was Updated</p>
+    </li>
+  </ul>
+
+<br>
+<div>
+  <button class="button" style="width: 800px" routerLink="/cart"> View Items in Cart </button>
+</div>
+
+<br><br>
+<hr>
+<p id="logoSpot">Sponsored by PAV Co. &#169;</p>
+</div>
+
+<div *ngIf="isLoggedIn != 'Yes'">
+  <h1>Please Sign In to Browse</h1>
+  <ul>
+      <li>
+          <div class="cent">
+              <button class = "button" style="width: 200px" routerLink="/login"> Go to Sign In </button>
+          </div>
+      </li>
+    </ul>
+    <br><br>
+    <hr>
+    <p id="logoSpot">Sponsored by PAV Co. &#169;</p>
+</div>
+
+
