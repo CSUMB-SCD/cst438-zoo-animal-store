@@ -15,7 +15,7 @@
             <td>
               <input class="input" style="width: 70px; height: 26px; float: left;" type="number" min="1" max="{{item$.instock}}"
                 #count value=1 />
-              <div>
+              <div style="text-align:right" style="float: right; padding-right: 10px;" >
                 <button id="adding" style='-webkit-margin-top-collapse: discard;' (click)="addToCart(item$,count.value)">Add to Cart</button>
               </div>
             </td>
@@ -31,15 +31,15 @@
       <li><strong style="padding-left: 10px;">Units in Stock: </strong> {{ item$.instock }}</li>
     </ul>
   
-    <div>
+    <div class="cent">
       <button class="button" style="width: 300px" routerLink="/cart">Go To Cart</button>
     </div>
   
-    <div>
+    <div class="cent">
       <button id="items" style="width:300px" routerLink="/items">Items List</button>
     </div>
   
-    <div>
+    <div class="cent">
       <button class="button" style="width: 300px" button #submit (click)="signOut()">Sign Out</button>
     </div>
     <br><br>
@@ -51,7 +51,7 @@
     <h1>Please Sign In To Shop</h1>
     <ul>
       <li>
-        <div>
+        <div class="cent">
           <button class="button" style="width: 200px" routerLink="/login">Go to Sign In</button>
         </div>
       </li>

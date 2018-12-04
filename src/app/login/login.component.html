@@ -6,7 +6,7 @@
       <br>
       <p class="basicText">Password</p><input class="input" type="password" #password />
       <br>
-      <div>
+      <div class="cent">
         <button class= "button" #submit (click)="onSubmit(username.value, password.value)"> Sign In </button>
       </div>
       <p id="errorText">Error: Invalid Credentials</p>
@@ -23,7 +23,7 @@
   
   <ul>
     <li>
-      <div>
+      <div class = "cent">
         <button class = "button" style="width: 350px" #submit (click)="signOut()"> Sign Out </button>
       </div>
     </li>
