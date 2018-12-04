@@ -24,7 +24,7 @@
               <td>${{ item.price * itemsInCart.get(item)[0] | number:"0.2" }}</td>
               <td colspan=2 style="float: center;">
                   <div>
-                      <button class="buttonText" style='-webkit-margin-top-collapse: discard;' style="width: 300px; float: center; margin-top: 10px; background-color: red; color: white; font-size: 24px;" (click)="remove(item)" routerLink="/cart">Remove</button>
+                      <button class="buttonText" style='-webkit-margin-top-collapse: discard;' style="width: 300px; float: right; margin-top: 10px; background-color: red; color: white; font-size: 24px; padding-left: 10px; padding-right: 15px" (click)="remove(item)" routerLink="/cart">Remove</button>
                   </div>
               </td>
             </tr>
